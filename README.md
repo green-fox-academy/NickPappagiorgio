@@ -4,4 +4,4 @@
 
 [I'm a patchwork repository link](https://github.com/NickPappagiorgio/patchwork)
 
-[I'am an Ace-Syllabus link] (https://github.com/greenfox-academy/ace-syllabus)
+[I'am an Ace-Syllabus link](https://github.com/greenfox-academy/ace-syllabus)
