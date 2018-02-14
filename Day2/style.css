@@ -1,0 +1,64 @@
+/* Header ************************************/ 
+
+header{
+    background-color: #404040;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    text-align: min-width;
+    padding: 0 10%;
+}
+
+.menu a{
+    color: #ff4ca2;
+}
+
+/* Body ************************************/
+
+#body{
+    text-align: center;
+    margin: 0 10%;
+}
+
+body {
+    background-image: url(img/background.png);
+}
+
+.top {
+    text-align: left;
+    margin: 50px 0 50px;
+}
+
+h1{
+    font-weight: 666;
+    margin-top: 20px;
+    font-family: courier;
+    margin-bottom: 0 50px;
+}
+
+h2{
+    color: #ff4ca2;
+    font-family: courier;
+}
+
+.middle {
+    display: inline;
+    padding: 0 25px;
+}
+
+.wiki {
+    margin: 50px;
+    font-family: courier;
+    color: black
+}
+
+/* Footer ************************************/
+
+footer{
+    font-size: 5px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
