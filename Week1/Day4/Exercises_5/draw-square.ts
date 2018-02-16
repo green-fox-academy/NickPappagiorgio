@@ -16,11 +16,11 @@ let space: string = '%' + '   ' + '%';
 
 for (let i: number = 1; i <= lineCount; i++) {
     
-        if (i == 1) {
-            console.log(percent);
-        } else if (i > 1 && i < lineCount) {
-            console.log(space);
-        } else {
-            console.log(percent);
-        }
+    if (i == 1) {
+        console.log(percent);
+    } else if (i > 1 && i < lineCount) {
+        console.log(space);
+    } else {
+        console.log(percent);
+    }
 }
