@@ -1,8 +1,6 @@
 'use strict';
 
-let lineCount: number = 4;
-let i: number = 1
-let star: string = '*'
+let lineCount: number = 11;
 
 // Write a program that draws a triangle like this:
 //
@@ -13,8 +11,9 @@ let star: string = '*'
 //
 // The triangle should have as many lines as lineCount is
 
-while (i <= lineCount) {
-    console.log(star);
-    star = star + '*';
-    i++;
+for (let i: number = 1; i <= lineCount; i++) {
+    let star: string = '';
+    for (let j: number = 1; j <= i ; j++) {
+        star = star + '*';
+    } console.log(star);
 }

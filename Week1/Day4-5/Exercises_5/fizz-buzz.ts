@@ -5,20 +5,14 @@
 // and for the multiples of five print “Buzz”.
 // For numbers which are multiples of both three and five print “FizzBuzz”.
 
-let a: number = 0;
-let Fizz: string = 'Fizz';
-let Buzz: string = 'Buzz';
-let FizzBuzz: string = 'FizzBuzz';
-
-while (a < 100) {
-    a++;
-    if (a % 15 == 0) {
-        console.log(FizzBuzz);
-    } else if (a % 3 == 0) {
-        console.log(Fizz)
-    } else if (a % 5 == 0) {
-        console.log(Buzz)
+for (let i: number = 1; i <= 100; i++) {
+    if (i % 15 == 0) {
+        console.log('FizzBuzz');
+    } else if (i % 3 == 0) {
+        console.log('Fizz');
+    } else if (i % 5 == 0) {
+        console.log('Buzz');
     } else {
-        console.log(a);
+        console.log(i);
     }
 }
