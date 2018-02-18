@@ -28,19 +28,19 @@ console.log(out2);
 
 let c: number = 123;
 let credits: number = 100;
-let isBonus: boolean = false;
+let isBonus: boolean = true;
 
 // if credits are at least 50,
 // and is_bonus is false decrement c by 2
 // if credits are smaller than 50,
 // and is_bonus is false decrement c by 1
 // if is_bonus is true c should remain the same
-if (credits >= 50 && (isBonus = false)) {
-    c -= 2
-} else if(credits < 50 && (isBonus = false)) {
-    c -= 1
-} else (isBonus = true); {
-    c == c
+if (credits >= 50 && !isBonus) {
+    c -= 2 ;
+} else if(credits < 50 && !isBonus) {
+    c -= 1 ;
+} else {
+    c == c ;
 }
 console.log(c);
 
@@ -56,10 +56,10 @@ let out3: string = '';
 // set out3 to "Time out"
 // otherwise set out3 to "Run Forest Run!"
 if (d % 4 === 0 && time <= 200) {
-    out3 = 'check'
+    out3 = 'Check' ;
 } else if (time > 200){
-    out3 = 'Time out'
+    out3 = 'Time out' ;
 } else {
-    out3 = 'Run Forest Run'
+    out3 = 'Run Forest Run' ;
 }
 console.log(out3);
