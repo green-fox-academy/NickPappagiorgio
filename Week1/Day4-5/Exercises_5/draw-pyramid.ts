@@ -1,6 +1,6 @@
 'use strict';
 
-let lineCount: number = 4;
+let lineCount: number = 11;
 let star: string = '*'
 let space: string = ' '
 
@@ -17,7 +17,7 @@ let space: string = ' '
 for (let i: number = 1; i <= lineCount; i++) {
     space = ' ';
     for (let j: number = 1; j <= (lineCount - i); j++){
-        space = space + ' ';
+        space += ' ';
     }
     console.log(space + star);
     star = '*' + star + '*';

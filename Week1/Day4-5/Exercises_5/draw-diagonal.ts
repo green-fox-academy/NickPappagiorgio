@@ -15,7 +15,7 @@ let lineCount: number = 6;
 
 for (let i: number = 1; i <= lineCount; i++) {
     let percent: string = '%';
-    for (let j: number = 1;j < lineCount; j++) {
+    for (let j: number = 1; j < lineCount; j++) {
        if (i == 1 || i == lineCount) {
            percent += '%';
        } else if (j == lineCount - 1 || j == i - 1) {

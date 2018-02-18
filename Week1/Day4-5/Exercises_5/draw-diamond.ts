@@ -1,8 +1,5 @@
 'use strict';
 
-let lineCount: number = 7;
-let star: string = '*'
-let space: string = ' '
 // Write a program that draws a
 // diamond like this:
 //
@@ -16,23 +13,29 @@ let space: string = ' '
 //
 // The diamond should have as many lines as lineCount is
 
-for (let i: number = 1; i <= lineCount - 3; i++) {
-    space = ' ';
-    for (let j: number = 1; j <= (lineCount - 3 - i); j++){
-        space = space + ' ';
-    }
-    console.log(space + star);
-    star = '*' + star + '*';
-}
+let lineCount: number = 7;
+let star: string = '*'
+let space: string = ' '
 
-for (let i: number = 1; i <= lineCount - 4; i++) {
-    space = ' ';
-    for (let j: number = 1; j <= (i); j++){
-        space = space + ' ';
-    }
-    star = '*';
-    for (let j: number = 1; j <= (lineCount - i - 4); j++){
+if ((lineCount % 2) == 0) {
+    console.log('Please try again with an odd number!');
+} else {
+    for (let i: number = 0; i <= (lineCount / 2); i++) {
+        space = ' ';
+        for ( let j : number = 1; j <= (lineCount / 2) - i; j++) {
+            space += ' ';
+        }
+        console.log(space + star);
         star = '*' + star + '*';
     }
-    console.log(space + star);
+
+
+    for (let i: number = 1; i <= (lineCount / 2); i++) {
+        star = '*';
+        for ( let j : number = 1; j <= (lineCount / 2) - i; j++) {
+         star = '*' + star + '*';
+        }
+        console.log(space + ' ' + star);
+        space += ' ';
+    }
 }
