@@ -5,7 +5,7 @@ let out: number = 0;
 
 // if a is even increment out by one
 if ((a % 2) === 0) {
-    out += 1
+    out ++
 }
 console.log(out);
 
@@ -17,11 +17,11 @@ let out2: string = '';
 // if less than 10 set out2 to "Less!",
 // if more than 20 set out2 to "More!"
 if (b > 10 && b < 20) {
-    out2 = 'Sweet!'
+    out2 = 'Sweet!';
 } else if (b < 10) {
-    out2 = 'Less!'    
-} else (b > 20); {
-    out2 = 'More!'
+    out2 = 'Less!';
+} else {
+    out2 = 'More!';
 }
 console.log(out2);
 
