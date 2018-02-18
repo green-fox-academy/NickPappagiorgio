@@ -1,9 +1,7 @@
 'use strict';
 
-let massInKg: number = 89.2;
+let massInKg: number = 89.0;
 let heightInM: number = 1.81;
-let kgPerM: number = null;
-let bmi: number = null;
 
 // Print the Body mass index (BMI) based on these values
 
@@ -11,7 +9,6 @@ let bmi: number = null;
 // 2. then divide the answer by your height again to get your BMI.
 
 
-kgPerM = massInKg / heightInM;
-//console.log(valami);
-bmi = kgPerM / heightInM;
-console.log(bmi);
+let kgPerM = massInKg / heightInM;
+let bmi = kgPerM / heightInM;
+console.log('Your Body mass index is: ' + bmi);

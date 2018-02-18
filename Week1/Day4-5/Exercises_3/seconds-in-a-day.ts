@@ -9,12 +9,6 @@ let currentSeconds: number = 42;
 
 let pastSeconds: number = (currentHours * 3600) + (currentMinutes * 60) + (currentSeconds);
 
-let remainingSeconds: number = (24 * 3600) - pastSeconds;
+let remainingSeconds: number = (24 * 60 * 60) - pastSeconds;
 
-
-console.log(pastSeconds);
-console.log(remainingSeconds);
-
-if (pastSeconds + remainingSeconds === 86400) {
-    console.log(true);
-}
+console.log(remainingSeconds + ' seconds left from the day.');

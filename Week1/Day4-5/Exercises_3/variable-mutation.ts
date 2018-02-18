@@ -22,7 +22,7 @@ console.log(d);
 
 let e: number = 8;
 // what's the cube of e's value?
-e **= 3; 
+e = 6 * 8 * 8;
 console.log(e);
 
 let f1: number = 123;
@@ -48,6 +48,6 @@ let j: number = 1521;
 // tell if j is dividable by 3 or 5 (as a boolean)
 console.log((j % 3) === 0 || (j % 5) === 0);
 
-let k: string = 'Apple';
+let k: string = 'Apple ';
 // fill the k variable with its content 4 times
-console.log(k + ' ' + k + ' ' + k + ' ' + k);
+console.log(k + k + k + k);

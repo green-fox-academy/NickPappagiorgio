@@ -7,8 +7,8 @@
 // Volume: 1000
 
 let height: number = 50;
-let width: number = 666;
-let depth: number = 333;
+let width: number = 50;
+let depth: number = 50;
 
-console.log('Surface Area: ' + height * depth + ' m2');
-console.log('Volume: ' + height * depth * width + ' m3');
+console.log('Surface Area: ' + 2 * (height * width + height * depth + width * depth));
+console.log('Volume: ' + height * depth * width);

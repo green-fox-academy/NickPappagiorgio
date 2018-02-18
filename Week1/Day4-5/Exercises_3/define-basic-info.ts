@@ -6,12 +6,12 @@
 // Your height in meters as a float
 // Whether you are married or not as a boolean
 
-let myName: string = 'Nemes Andras';
+let myName: string = 'Andras Nemes';
 let myAge: number = 29;
 let myHeight: number = 1.81;
 let married: boolean = true;
 
-console.log(myName);
-console.log(myAge);
-console.log(myHeight);
-console.log(married);
+console.log('My name is: ' + myName);
+console.log('I\'m ' + myAge + ' years old.');
+console.log('I\'m ' + myHeight + ' tall.');
+console.log('Am I married? ' + married);

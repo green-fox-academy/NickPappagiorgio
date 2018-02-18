@@ -11,6 +11,6 @@
 //  31
 //  1.87
 
-console.log('Nemes Andras');
-console.log('29');
-console.log('1,81 m');
+console.log('Name: ' + 'Nemes Andras');
+console.log('Age: ' + 29);
+console.log('Height: ' + 1.81 + ' m');
