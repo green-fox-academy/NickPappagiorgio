@@ -34,12 +34,12 @@ function studentsSum(candies) {
     return student.candies < 5;
   });
 
-  let g = 0;
+  let ageSum = 0;
 
   filteredStudents.forEach(function(age) {
-    g += age.age;
+    ageSum += age.age;
   }); 
-  console.log(g);
+  console.log(ageSum);
 }
 
 studentsSum(5);
