@@ -10,9 +10,10 @@ const ctx = canvas.getContext('2d');
 //  - The stars should have random positions on the canvas
 //  - The stars should have random color (some shade of grey)
 
+//I gave the background color of the canvas at HTML.
 
-ctx.fillStyle = 'black';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+//ctx.fillStyle = 'black';
+//ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function random(input: number) {
   let x: number = Math.floor((Math.random() * canvas.width) + 1)
