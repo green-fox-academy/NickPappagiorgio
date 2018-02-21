@@ -20,6 +20,7 @@ function connect(input: any[][]) {
   ctx.strokeStyle = 'green';
   ctx.beginPath();
 
+  // Az [x] es [y] az array indexet lepteti.
   for (let x: number = 0; x < input.length; x++) {
     let y: number = 0;
     ctx.lineTo(input[x][y], input[x][y + 1]);
