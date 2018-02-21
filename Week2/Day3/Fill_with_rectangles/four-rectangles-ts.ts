@@ -15,8 +15,10 @@ function fourSquare(x: number, y: number, color: string) {
 }
 
 let x: number = 20;
+let y: number = 20;
 
 colors.forEach(function(AColor){
-  fourSquare(x,20,AColor);
-  x += 25; 
+  fourSquare(x,y,AColor);
+  x += 25;
+  y += 25;
 })
