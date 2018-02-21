@@ -7,20 +7,16 @@ const ctx = canvas.getContext('2d');
 // Draw four different size and color rectangles.
 // Avoid code duplication.
 
-function fourSquare(x: number, y: number, width: number, height: number) {
-  ctx.fillStyle = 'red';
-  ctx.fillRect(x, y, width, height);
-  ctx.stroke();
-}
-let x: number = 10;
-let y: number = 10;
-let width: number = 10;
-let heigth: number = 10;
+let colors: string[] = ['blue', 'red', 'green', 'black']
 
-for (let i: number = 0; i < 4; i++) { 
-  x += x;
-  y += y;
-  width *= 2;
-  heigth *= 2;
-  fourSquare(x,y,width,heigth);
+function fourSquare(x: number, y: number, color: string) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x,y,20,20);
 }
+
+let x: number = 20;
+
+colors.forEach(function(AColor){
+  fourSquare(x,20,AColor);
+  x += 25; 
+})
