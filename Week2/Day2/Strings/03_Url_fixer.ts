@@ -3,6 +3,4 @@
 // Also, the URL is missing a crutial component, find out what it is and insert it too!
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 
-
-
-console.log(url);
+console.log(url.replace('bots', 'odds').replace('s', 's:'));
