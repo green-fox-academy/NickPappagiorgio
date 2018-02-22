@@ -4,6 +4,7 @@
 let quote: string = 'Hofstadter\'s Law: It you expect, even when you take into account Hofstadter\'s Law.'
 
 
-
-
-console.log(quote);
+let array = quote.split(' ');
+array.splice(array.indexOf('you'), 0, 'always takes longer than');
+let joined = array.join(' ');
+console.log(joined);
