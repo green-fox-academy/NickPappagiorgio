@@ -15,10 +15,10 @@ let space: string = ' '
 // The pyramid should have as many lines as lineCount is
 
 for (let i: number = 1; i <= lineCount; i++) {
-    space = ' ';
-    for (let j: number = 1; j <= (lineCount - i); j++){
-        space += ' ';
-    }
-    console.log(space + star);
-    star = '*' + star + '*';
+  space = ' ';
+  for (let j: number = 1; j <= (lineCount - i); j++) {
+    space += ' ';
+  }
+  console.log(space + star);
+  star = '*' + star + '*';
 }

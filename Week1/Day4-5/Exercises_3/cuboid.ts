@@ -10,5 +10,5 @@ let height: number = 50;
 let width: number = 50;
 let depth: number = 50;
 
-console.log('Surface Area: ' + 2 * (height * width + height * depth + width * depth));
+console.log('Surface Area: ' + 2 * (height  *  width + height  *  depth + width *  depth));
 console.log('Volume: ' + height * depth * width);

@@ -10,4 +10,4 @@
 // work hours weekly is 52
 
 console.log(17 * 5 * 6 + ' hours');
-console.log((52 * 17 * 100)/(17 * 7 * 24) + ' %');
+console.log((52 * 17 * 100) / (17 * 7 * 24) + ' %');

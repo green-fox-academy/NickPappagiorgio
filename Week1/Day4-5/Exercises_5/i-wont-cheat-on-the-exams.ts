@@ -9,6 +9,6 @@ while (a < 101) {
     a++;
 }
 */
-for (let i: number = 1; i <= 100; i++) {
-    console.log(i + ' I won\'t cheat on the exam!');
+for (let i: number = 1;  i <= 100; i++) {
+  console.log(i + ' I won\'t cheat on the exam!');
 }

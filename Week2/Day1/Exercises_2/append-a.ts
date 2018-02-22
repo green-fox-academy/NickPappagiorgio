@@ -6,7 +6,7 @@
 
 
 let nimals = ["kuty", "macsk", "cic"];
-for (let i: number = 0; i < nimals.length; i++) {
+for (let i: number = 0; i < nimals.length;  i++) {
   nimals[i] += 'a';
 }
 console.log(nimals);

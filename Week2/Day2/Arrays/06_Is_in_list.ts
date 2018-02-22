@@ -6,7 +6,7 @@
 
 let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
 
-function checkNums(input):boolean {
+function checkNums(input): boolean {
   return (input.includes(4) && input.includes(8) && input.includes(12) && input.includes(16) && input.includes(4));
 }
 

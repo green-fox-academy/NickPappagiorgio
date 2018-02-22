@@ -6,4 +6,4 @@
 function printer(args: any[]) {
   console.log(args);
 }
-printer([1,2,3,'Fasza!']);
+printer([1, 2, 3, 'Fasza!']);

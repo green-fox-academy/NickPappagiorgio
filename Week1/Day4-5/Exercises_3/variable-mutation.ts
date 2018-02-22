@@ -22,13 +22,13 @@ console.log(d);
 
 let e: number = 8;
 // what's the cube of e's value?
-e = 6 * 8 * 8;
+e = 6 *  8 * 8;
 console.log(e);
 
 let f1: number = 123;
 let f2: number = 345;
 // tell if f1 is bigger than f2 (as a boolean)
-console.log(f1 > f2);
+console.log(f1 >  f2);
 
 let g1: number = 350;
 let g2: number = 200;

@@ -7,6 +7,6 @@
 let typo: string = 'kuty'
 
 function appendA(letter: string) {
-    console.log(letter + 'a');
+  console.log(letter + 'a');
 }
 appendA(typo);

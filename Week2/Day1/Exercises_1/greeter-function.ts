@@ -8,6 +8,6 @@
 
 let named: string = 'Greenfox';
 function greet(valaki: string) {
-	console.log('Hello ' + valaki + '! Mizu?');
+  console.log('Hello ' + valaki + '! Mizu?');
 }
 greet(named);

@@ -6,7 +6,7 @@
 
 let names = ['Gin', 'Whiskey', 'Wine', 'Beer']
 
-names.map(function(value: string, index: number) {
+names.map(function (value: string, index: number) {
   names[index] += names[index];
 })
 console.log(names);

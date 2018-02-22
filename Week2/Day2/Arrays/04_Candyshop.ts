@@ -9,8 +9,8 @@ let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
 
 function modify(sweets: any[]) {
-  sweets.splice(1,1,'Croissant');
-  sweets.splice(3,1,'Ice cream');
+  sweets.splice(1, 1, 'Croissant');
+  sweets.splice(3, 1, 'Ice cream');
   return sweets;
 }
 
