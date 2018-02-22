@@ -10,15 +10,13 @@ let words: string[] = ['What', 'I', 'do', 'create,', 'I', 'cannot', 'not', 'unde
 
 
 
+function swap(input: any[], index1: number, index2: number) {
+  let variable = input[index1];
+  input[index1] = input[index2];
+  input[index2] = variable;
+  return input;
+}
 
-
-
-
-
-
-
-
-
-console.log(quoteSwap(words));
+console.log(swap(words, 2, 5));
 
 // Expected output: "What I cannot create I do not understand."

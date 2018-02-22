@@ -25,5 +25,5 @@ function random(input: number) {
 }
 
 for (let i: number = 0; i < Math.floor((Math.random() * 1000) + 1); i++) {
-  random(15);
+  random(3);
 }
