@@ -21,7 +21,8 @@
 //]
 
 /*
-//Igors money
+// PART_ONE_Igors money
+
 function nameBalance(accounts: any[], number: number) {
   let accountList: any[] = [];
   for (let i: number = 0; i < accounts.length; i++) {
@@ -40,68 +41,36 @@ let accounts: any[] = [
 ];
 
 function nameBalance(accounts: any[], from: number, to: number, money: number) {
-  let accountList: any[] = [];
+
+  let checker: any[] = [];
   for (let i: number = 0; i < accounts.length; i++) {
     if (accounts[i].account_number === from) {
-      accounts[i].balance -= money;
-      console.log(accounts[i].client_name + ': ' + (accounts[i].balance));
-    } 
-  }
-  for (let i: number = 0; i < accounts.length; i++) {
-    if (accounts[i].account_number === to) {
-      accounts[i].balance += money;
-      console.log(accounts[i].client_name + ': ' + (accounts[i].balance));
+      checker.push('one')
     }
   }
 
+  for (let i: number = 0; i < accounts.length; i++) {
+    if (accounts[i].account_number === to) {
+      checker.push('two')
+    }
+  }
+
+  if (checker.length === 2) {
+
+    for (let i: number = 0; i < accounts.length; i++) {
+      if (accounts[i].account_number === from) {
+        accounts[i].balance -= money;
+        console.log(accounts[i].client_name + ': ' + (accounts[i].balance));
+      }
+    }
+
+    for (let i: number = 0; i < accounts.length; i++) {
+      if (accounts[i].account_number === to) {
+        accounts[i].balance += money;
+        console.log(accounts[i].client_name + ': ' + (accounts[i].balance));
+      }
+    }
+  } else console.log('Log "404 - account not found" if any of the account numbers don\'t exist to the console.')
 }
 nameBalance(accounts, 43546731, 23456311, 500);
 nameBalance(accounts, 43546731, 23456311, 500);
-
-
-
-//Log "404 - account not found" if any of the account numbers don't exist to the console.
-
-
-
-
-
-
-
-
-
-
-
-
-// bbosze
-/*
-function transfer(database:any[], accountFrom:string, accountTo:string, amount:number) {
-  let checkArray: string[] = [];
-
-  for (let i:number = 0; i < database.length; i++) {
-    if (database[i].client_name === accountFrom) {
-      checkArray.push('a')} }
-  for (let i:number = 0; i < database.length; i++) {
-    if (database[i].client_name === accountTo){
-      checkArray.push('b')
-      }}
-
-  if (checkArray.length === 2){
-      
-    for (let i:number = 0; i < database.length; i++) {
-      if (database[i].client_name === accountFrom) {
-        database[i].balance -= amount;
-        console.log(database[i].client_name, database[i].account_number, database[i].balance)
-      } }
-      for (let i:number = 0; i < database.length; i++) {
-        if (database[i].client_name === accountTo) {
-        database[i].balance += amount;
-        console.log(database[i].client_name, database[i].account_number, database[i].balance)
-    }}}
-    else {
-      console.log('404 - account not found')
-    }
-  }
-
-transfer(accounts, 'Sergei', 'Igor', 1000);
-*/
