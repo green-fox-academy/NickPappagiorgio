@@ -3,44 +3,44 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-function drawline(b: number, c: number, d: number, e: number) {
+function drawline(xStart: number, yStart: number, xTo: number, yTo: number) {
   ctx.beginPath();
-  ctx.moveTo(b, c);
-  ctx.lineTo(d, e);
+  ctx.moveTo(xStart, yStart);
+  ctx.lineTo(xTo, yTo);
   ctx.stroke();
-} 
+}
 
 function lines(a: number) {
   let b: number = a;
   a = 0;
   ctx.strokeStyle = 'blue';
-  for (let i: number = 0; i <= canvas.width / (b * 2); i++) {
+  for (let i: number = 0; i <= canvas.height / (b * 2); i++) {
     drawline(canvas.width / 2, a, canvas.width / 2 - a, canvas.height / 2);
     a += b;
   }
 
   a = 0;
   ctx.strokeStyle = 'red';
-  for (let i: number = 0; i <= canvas.width / (b * 2); i++) {
+  for (let i: number = 0; i <= canvas.height / (b * 2); i++) {
     drawline(canvas.width / 2, a, canvas.width / 2 + a, canvas.height / 2);
     a += b;
   }
 
   a = 0;
-  ctx.strokeStyle = 'green';  
-  for (let i: number = 0; i <= canvas.width / (b * 2); i++) {
+  ctx.strokeStyle = 'green';
+  for (let i: number = 0; i <= canvas.height / (b * 2); i++) {
     drawline(canvas.width / 2, canvas.height - a, canvas.width / 2 - a, canvas.height / 2);
     a += b;
   }
 
   a = 0;
   ctx.strokeStyle = 'black';
-  for (let i: number = 0; i <= canvas.width / (b * 2); i++) {
+  for (let i: number = 0; i <= canvas.height / (b * 2); i++) {
     drawline(canvas.width / 2, canvas.height - a, canvas.width / 2 + a, canvas.height / 2);
     a += b;
   }
 }
-console.log(lines(5));
+lines(15);
 
 
 
@@ -94,5 +94,5 @@ function lines(a: number) {
     a += b;
   }
 }
-console.log(lines(5));
+lines(5);
 */
