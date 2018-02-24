@@ -23,5 +23,5 @@ for (let i: number = 0; i <= rowNumber; i++) {
     triangle(x, y);
   }
   x = canvas.width / 2 + 10 * i;
-  y = (0 + 15) + (i * 15);
+  y = 15 + (i * 15);
 }
