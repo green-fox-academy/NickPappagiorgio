@@ -14,7 +14,7 @@ function createCell(x: number, y: number, color: string) {
 
 let x: number = 0;
 let y: number = 0;
-let cellWidth: number = canvas.width / 10;
+let cellWidth: number = canvas.width / 8;
 
 
 for (let i: number = 0; i < 10; i++) {
@@ -25,7 +25,7 @@ for (let i: number = 0; i < 10; i++) {
     } else if (j % 2 !== 0 && i % 2 !== 0) {
       createCell(x, y, 'black');
     } else {
-      createCell(x, y, 'red');
+      createCell(x, y, 'blue');
     }
     x += cellWidth;
   }
