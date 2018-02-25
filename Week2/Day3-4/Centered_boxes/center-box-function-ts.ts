@@ -10,7 +10,7 @@ const ctx = canvas.getContext('2d');
 // Draw 3 squares with that function.
 // Avoid code duplication.
 
-let colors: string[] = ['blue', 'red', 'green']
+let colors: string[] = ['blue', 'red', 'green'];
 
 function square(x: number, color: string) {
   ctx.strokeStyle = color;

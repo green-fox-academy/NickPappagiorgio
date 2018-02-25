@@ -6,6 +6,7 @@
 
 let baseNum: number = 123;
 function doubling(number: number) {
-  console.log(number = number * 2)
+  number = number * 2;
+  console.log(number);
 }
 doubling(baseNum);

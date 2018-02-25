@@ -7,7 +7,7 @@ const ctx = canvas.getContext('2d');
 // Draw four different size and color rectangles.
 // Avoid code duplication.
 
-let colors: string[] = ['blue', 'red', 'green', 'black']
+let colors: string[] = ['blue', 'red', 'green', 'black'];
 
 function fourSquare(x: number, y: number, color: string) {
   ctx.fillStyle = color;

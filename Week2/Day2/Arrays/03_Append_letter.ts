@@ -6,7 +6,7 @@
 let far: string[] = ['kuty', 'macsk', 'kacs', 'rók', 'halacsk'];
 
 function appendA(newFar: string[]) {
-  newFar = newFar.map(newFarA => newFarA + 'a')
+  newFar = newFar.map(newFarA => newFarA + 'a');
   return newFar;
 }
 

@@ -10,9 +10,16 @@ let planetList: string[] = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Ura
 // Expected output: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune", "Saturn"
 
 
+// VERSION 2.0
+planetList.push('Saturn');
+console.log(planetList);
+
+//// VERSION 1.0
+/*
 function putSaturn(value: string) {
   planetList.push(value);
   console.log(planetList);
 }
 
 putSaturn('Saturn');
+*/

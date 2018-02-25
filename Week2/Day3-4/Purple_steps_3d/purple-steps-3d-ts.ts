@@ -7,9 +7,9 @@ const ctx = canvas.getContext('2d');
 // Reproduce this:
 // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
-
+ctx.fillStyle = 'purple';
 function fourSquare(x: number, y: number, width: number, height: number) {
-  ctx.fillStyle = 'purple';
+
   ctx.fillRect(x, y, width, height);
   ctx.stroke();
 }

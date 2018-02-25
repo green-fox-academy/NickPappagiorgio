@@ -4,8 +4,8 @@
 // -  Swap the first and the third element of `abc`
 
 let abc = ["Arthur", "Boe", "Chloe"];
-let i = abc [2];
-let j = abc [0];
+let i: string = abc[2];
+let j: string = abc[0];
 abc.pop();
 abc.shift();
 abc.push(j);

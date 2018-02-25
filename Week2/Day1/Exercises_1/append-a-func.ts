@@ -4,7 +4,7 @@
 //    appends an 'a' character to its end and returns with a string
 // -  Print the result of `appendAFunc(typo)`
 
-let typo: string = 'kuty'
+let typo: string = 'kuty';
 
 function appendA(letter: string) {
   console.log(letter + 'a');
