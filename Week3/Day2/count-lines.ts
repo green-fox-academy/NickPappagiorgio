@@ -13,7 +13,7 @@ function fileName(name: string) {
 try {
   const fs = require('fs');
   let fileContent = fs.readFileSync('myfile.txt', 'utf-8');
-  console.log(fileName(fileContent));
+  console.log(fileName('myfile.txt'));
 }
 
 catch (error) {
