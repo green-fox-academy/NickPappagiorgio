@@ -9,8 +9,8 @@ let fileName: string = 'myfile.txt';
 
 function fileLenght(name: string) {
   let fileContent = fs.readFileSync(name, 'utf-8');
-  let array: any[] = fileContent.split('\r\n');
-  return array.length, array;
+  let array: any[] = fileContent.split('\n');
+  return array.length;
 }
 
 try {
