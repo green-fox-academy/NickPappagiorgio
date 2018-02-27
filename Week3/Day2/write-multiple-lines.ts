@@ -12,7 +12,16 @@
 const fs = require('fs');
 let fileName: string = 'myfile2.txt';
 
-function writeIn(path: string, word: string, number: number) { fs.writeFileSync(path, (fs.readFileSync(path, 'utf-8')) + word + '\n');
-
+try {
+  function writeIn(path: string, word: string, number: number) {
+    let input: string = '';
+    for (let i: number = 0; i < number; i++) {
+      input += word + '\n';
+    }
+    return fs.writeFileSync(path, (fs.readFileSync(path, 'utf-8')) + input);
+  } writeIn(fileName, 'Yolo!', 5);
 }
-writeIn(fileName, 'XD', 5);
+
+catch (error) {
+  console.log('Unable to write the file, the file is write protected!')
+}
