@@ -12,7 +12,7 @@
 const fs = require('fs');
 let fileName: string = 'myfile2.txt';
 
-function writeIn(path: string, word: string, number: number) { fs.writeFileSync(path, (fs.readFileSync(path, 'utf-8')) + '\n' + word);
+function writeIn(path: string, word: string, number: number) { fs.writeFileSync(path, (fs.readFileSync(path, 'utf-8')) + word + '\n');
 
 }
 writeIn(fileName, 'XD', 5);
