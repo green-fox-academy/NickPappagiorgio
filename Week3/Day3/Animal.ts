@@ -22,14 +22,13 @@ class Animal {
     this.thirst++;
   }
 
-  get print() {
-    return zebra;
+  print() {
+    return `Hunger: ${this.hunger}, thirst: ${this.thirst}`;
   }
-
 }
 
 let zebra = new Animal(11, 22);
 zebra.eat();
 zebra.eat();
 zebra.drink();
-console.log(zebra.print);
+console.log(zebra.print());
