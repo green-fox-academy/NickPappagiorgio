@@ -11,7 +11,7 @@ class Sharpie {
   }
 
   use(decreas) {
-    this.inkAmmount - decreas;
+    this.inkAmmount -= decreas;
   }
 }
 
