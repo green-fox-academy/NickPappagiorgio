@@ -15,4 +15,4 @@ function fibo(n: number) {
     return fibo(n - 1) + fibo(n - 2);
   }
 }
-fibo(5);
+console.log(fibo(5));
