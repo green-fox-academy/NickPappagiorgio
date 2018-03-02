@@ -17,7 +17,7 @@ function bullshit(x: number, y: number, z: number, repeat: number) {
   ctx.lineTo(x + z + z / 2, y + z * Math.sqrt(3) / 2);
   ctx.lineTo(x + z, y + z * Math.sqrt(3));
   ctx.lineTo(x, y + z * Math.sqrt(3));
-  ctx.lineTo(x- z / 2, y + z * Math.sqrt(3) / 2);
+  ctx.lineTo(x - z / 2, y + z * Math.sqrt(3) / 2);
   ctx.lineTo(x, y);
   ctx.stroke();
 
@@ -29,7 +29,7 @@ function bullshit(x: number, y: number, z: number, repeat: number) {
     bullshit(x, y + z * Math.sqrt(3) / 2, z / 2, repeat - 1);
 
     ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
-    bullshit(x + (z / 4) * 3, y + z * Math.sqrt(3) / 4, z / 2, repeat - 1);
+    bullshit(x + (z / 4) * 3, y + z * Math.sqrt(3) / 4, z / 2, repeat - 1);
   }
 }
 bullshit(sizeX, sizeY, size, repeat);
