@@ -19,10 +19,3 @@ console.log(hhh(2));
 console.log(hhh(3));
 console.log(hhh(10));
 console.log(hhh(128));
-
-
-/*
-console.log(126 % 10);
-console.log(Math.floor(126 / 10) % 10);
-console.log(Math.floor(126 / 10 / 10));
-*/
