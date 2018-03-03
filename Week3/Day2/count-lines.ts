@@ -5,17 +5,14 @@
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
-const fs = require('fs');
-let fileName: string = 'myfile.txt';
-
-function fileLenght(name: string) {
-  let fileContent = fs.readFileSync(name, 'utf-8');
-  let array: any[] = fileContent.split('\n');
-  return array.length;
-}
-
 try {
-  console.log(fileLenght(fileName));
+  const fs = require('fs');
+  let fileContent = fs.readFileSync('froms.txt', 'utf-8');
+
+  function fileName(name: string) {
+    let array: string[] = name.split('\n');
+    return array.length;
+  } console.log(fileName(fileContent));
 } catch (error) {
   console.log('zero');
 }
