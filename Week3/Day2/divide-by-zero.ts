@@ -10,4 +10,5 @@ function takes(number: number) {
     return 'fail';
   }
   return (10 / number);
-} console.log(takes(0));
+}
+console.log(takes(0));
