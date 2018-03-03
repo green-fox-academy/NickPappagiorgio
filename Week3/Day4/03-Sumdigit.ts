@@ -6,16 +6,11 @@
 
 
 
-function hhh(n: number) {
+function sum(n: number) {
   if (n < 10) { //base case
     return n;
   } else {
-    return (n % 10) + hhh(Math.floor(n / 10));
+    return (n % 10) + sum(Math.floor(n / 10));
   }
 }
-
-console.log(hhh(1));
-console.log(hhh(2));
-console.log(hhh(3));
-console.log(hhh(10));
-console.log(hhh(128));
+console.log(sum(128));
