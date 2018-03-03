@@ -13,10 +13,8 @@ function copy(from: string, to: string) {
   try {
     fs.writeFileSync(to, (fs.readFileSync(from, 'utf-8')));
     return true;
-  }
-  catch (error) {
+  } catch (error) {
     return false;
   }
-} console.log(copy(fileOne, fileTwo));
-
-
+}
+console.log(copy(fileOne, fileTwo));
