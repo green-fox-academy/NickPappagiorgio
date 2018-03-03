@@ -12,13 +12,11 @@
 
 
 const fs = require('fs');
-let myName: string = 'Nemes Andras';
+let myName: string = 'Andras Nemes';
 let fileName: string = 'myfile.txt';
 
 try {
   fs.writeFileSync(fileName, (fs.readFileSync(fileName, 'utf-8')) + '\n' + myName);
-}
-
-catch (error) {
+} catch (error) {
   console.log('Unable to write the file, the file is write protected!')
 }
