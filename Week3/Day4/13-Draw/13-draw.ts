@@ -22,14 +22,14 @@ function bullshit(x: number, y: number, z: number, repeat: number) {
   ctx.stroke();
 
   if (repeat >= 1) {
-    ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
-    bullshit(x, y, z / 2, repeat - 1);
-
-    ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
-    bullshit(x, y + z * Math.sqrt(3) / 2, z / 2, repeat - 1);
-
-    ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
-    bullshit(x + (z / 4) * 3, y + z * Math.sqrt(3) / 4, z / 2, repeat - 1);
+    setTimeout(function () {
+      ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
+      bullshit(x, y, z / 2, repeat - 1);
+      ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
+      bullshit(x, y + z * Math.sqrt(3) / 2, z / 2, repeat - 1);
+      ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 100%, 50%)';
+      bullshit(x + (z / 4) * 3, y + z * Math.sqrt(3) / 4, z / 2, repeat - 1);
+    }, 600)
   }
 }
 bullshit(sizeX, sizeY, size, repeat);
