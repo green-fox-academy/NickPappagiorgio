@@ -20,8 +20,6 @@ try {
     }
     return fs.writeFileSync(path, (fs.readFileSync(path, 'utf-8')) + input);
   } writeIn(fileName, 'Yolo!', 5);
-}
-
-catch (error) {
+} catch (error) {
   console.log('Unable to write the file, the file is write protected!')
 }
