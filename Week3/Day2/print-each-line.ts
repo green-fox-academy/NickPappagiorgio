@@ -8,10 +8,8 @@
 const fs = require('fs');
 
 try {
-let fileContent = fs.readFileSync('/path/to/myfile', 'utf-8');
-console.log(fileContent);
-}
-
-catch(error) {
-  console.log('Nyazsgem!')
+  let fileContent = fs.readFileSync('/path/to/myfile', 'utf-8');
+  console.log(fileContent);
+} catch (error) {
+  console.log('File not found!')
 }
