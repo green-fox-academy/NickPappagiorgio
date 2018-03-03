@@ -8,7 +8,6 @@ const fs = require('fs');
 let fileOne: string = 'from.txt';
 let fileTwo: string = 'to.txt';
 
-
 function copy(from: string, to: string) {
   try {
     fs.writeFileSync(to, (fs.readFileSync(from, 'utf-8')));
@@ -16,5 +15,4 @@ function copy(from: string, to: string) {
   } catch (error) {
     return false;
   }
-}
-console.log(copy(fileOne, fileTwo));
+} console.log(copy(fileOne, fileTwo));
