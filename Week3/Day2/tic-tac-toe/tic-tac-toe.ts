@@ -28,8 +28,7 @@ function ticTacResult(file: string) {
     car[0] + car[4] + car[8] === 0 ||
     car[2] + car[4] + car[6] === 0) {
     return 'O Win!';
-  }
-  else if (car[0] + car[1] + car[2] === 3 ||
+  } else if (car[0] + car[1] + car[2] === 3 ||
     car[3] + car[4] + car[5] === 3 ||
     car[6] + car[7] + car[8] === 3 ||
     car[0] + car[3] + car[6] === 3 ||
@@ -38,8 +37,7 @@ function ticTacResult(file: string) {
     car[0] + car[4] + car[8] === 3 ||
     car[2] + car[4] + car[6] === 3) {
     return 'X Win!';
-  }
-  else {
+  } else {
     return 'DRAW!';
   }
 }
