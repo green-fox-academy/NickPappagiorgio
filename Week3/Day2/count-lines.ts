@@ -4,6 +4,7 @@
 // then returns the number of lines the file contains.
 // It should return zero if it can't open the file, and
 // should not raise any error.
+
 const fs = require('fs');
 let fileName: string = 'myfile.txt';
 
@@ -15,8 +16,6 @@ function fileLenght(name: string) {
 
 try {
   console.log(fileLenght(fileName));
-}
-
-catch (error) {
+} catch (error) {
   console.log('zero');
 }
