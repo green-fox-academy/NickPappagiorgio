@@ -27,7 +27,9 @@ class Plant {
     this.color = color;
   }
   level() { }
-  watering(amount: number) { }
+  watering(amount: number) {
+    console.log(`The ${this.color} Flower doesnt need water.`)
+  }
 }
 
 class Flower extends Plant {
