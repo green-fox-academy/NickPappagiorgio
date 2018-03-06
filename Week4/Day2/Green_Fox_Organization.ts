@@ -11,10 +11,10 @@ class Person {
     this.gender = gender;
   }
   introduce() {
-    return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}.`;
+    console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}.`);
   }
   getGoal() {
-    return "My goal is: Live for the moment!";
+    console.log("My goal is: Live for the moment!");
   }
 }
 
@@ -28,10 +28,10 @@ class Student extends Person {
     this.skippedDays = skippedDays;
   }
   introduce() {
-    return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`;
+    console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`);
   }
   getGoal() {
-    return "Be a junior software developer.";
+    console.log("Be a junior software developer.");
   }
   skipDays(numberOfDays) {
     this.skippedDays += numberOfDays;
@@ -46,10 +46,10 @@ class Mentor extends Person {
     this.level = level;
   }
   introduce() {
-    return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`;
+    console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`);
   }
   getGoal() {
-    return "Educate brilliant junior software developers.";
+    console.log("Educate brilliant junior software developers.");
   }
 }
 
@@ -63,34 +63,32 @@ class Sponsor extends Person {
     this.hiredStudents = hiredStudents;
   }
   introduce() {
-    return `Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`;
+    console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
   }
   hire() {
     this.hiredStudents++;
   }
   getGoal() {
-    return "Hire brilliant junior software developers.";
+    console.log("Hire brilliant junior software developers.");
   }
 }
 
 class Cohort {
   name: string;
-  students: Student[];
-  mentors: Mentor[];
+  students: Student[] = [];
+  mentors: Mentor[] = [];
 
-  constructor(name: string, students?: Student[], mentors?: Mentor[]) {
+  constructor(name: string) {
     this.name = name;
-    this.students = students;
-    this.mentors = mentors;
   }
   addStudent(Student) {
-    Student.push(this.students);
+    this.students.push(Student);
   }
   addMentor(Mentor) {
-    Mentor.push(this.mentors);
+    this.mentors.push(Mentor);
   }
   info() {
-    return `The ${this.name} cohort has ${this.students.length} students and ${this.mentors.length} mentors.`;
+    console.log(`The ${this.name} cohort has ${this.students.length} students and ${this.mentors.length} mentors.`);
   }
 }
 
