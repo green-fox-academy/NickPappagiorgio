@@ -18,17 +18,12 @@ class Person {
   }
 }
 
-class Student {
-  name: string;
-  age: number;
-  gender: string;
+class Student extends Person {
   previousOrganization: string;
   skippedDays: number;
 
   constructor(name: string, age: number, gender: string, previousOrganization: string, skippedDays: number = 0) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender)
     this.previousOrganization = previousOrganization;
     this.skippedDays = skippedDays;
   }
@@ -43,16 +38,11 @@ class Student {
   }
 }
 
-class Mentor {
-  name: string;
-  age: number;
-  gender: string;
+class Mentor extends Person {
   level: string;
 
   constructor(name: string, age: number, gender: string, level: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender)
     this.level = level;
   }
   introduce() {
@@ -63,17 +53,12 @@ class Mentor {
   }
 }
 
-class Sponsor {
-  name: string;
-  age: number;
-  gender: string;
+class Sponsor extends Person {
   company: string;
   hiredStudents: number;
 
   constructor(name: string, age: number, gender: string, company: string, hiredStudents: number = 0) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender)
     this.company = company;
     this.hiredStudents = hiredStudents;
   }
@@ -90,10 +75,10 @@ class Sponsor {
 
 class Cohort {
   name: string;
-  students: string[];
-  mentors: string[];
+  students: Student[];
+  mentors: Mentor[];
 
-  constructor(name: string, students?: string[], mentors?: string[]) {
+  constructor(name: string, students?: Student[], mentors?: Mentor[]) {
     this.name = name;
     this.students = students;
     this.mentors = mentors;
