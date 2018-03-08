@@ -21,5 +21,3 @@ export class Anagram {
     }
   }
 }
-let ddd = new Anagram;
-console.log(ddd.anagram('mozi', 'izom'));
