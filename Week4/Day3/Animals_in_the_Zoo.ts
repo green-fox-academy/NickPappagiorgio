@@ -22,6 +22,7 @@ abstract class Breed extends Animal {
     return 'laying eggs.';
   }
 }
+
 class Mammal extends Animal {
   breed() {
     return 'pushing miniature versions out.';
