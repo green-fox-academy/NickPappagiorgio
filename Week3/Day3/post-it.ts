@@ -5,7 +5,7 @@ class PostIt {
   text: string;
   textColor: string;
 
-  constructor(backgroundColorIn, textIn, textColorIn) {
+  constructor(backgroundColorIn: string, textIn: string, textColorIn: string) {
     this.backgroundColor = backgroundColorIn;
     this.text = textIn;
     this.textColor = textColorIn;

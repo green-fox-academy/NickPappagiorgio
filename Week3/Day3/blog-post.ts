@@ -6,7 +6,7 @@ class BlogPost {
   text: string;
   publicationDate: string;
 
-  constructor(name, title, text, date) {
+  constructor(name: string, title: string, text: string, date: string) {
     this.authorName = name;
     this.title = title;
     this.text = text;
