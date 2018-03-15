@@ -25,7 +25,7 @@ class PirateCrews {
   }
 }
 
-class Pirate {
+class Pirate extends PirateCrews {
   name: string;
   crew: string;
   intoxicates: number;
@@ -33,6 +33,7 @@ class Pirate {
   woodenLeg: boolean;
 
   constructor(name: string, crew: string, intoxicates?: number, eyes?: number, woodenLeg?: boolean) {
+    super()
     this.name = name;
     this.crew = crew;
     this.intoxicates = intoxicates || 0;
