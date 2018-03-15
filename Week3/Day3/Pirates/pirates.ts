@@ -15,7 +15,7 @@ class PirateCrews {
   drinkSomeRum(howMany?: number) {
     this.pirateCrew.map(pirate => pirate.drinkSomeRum(howMany));
   }
-  die(name: string) {
+  die(name?: string) {
     this.pirateCrew.map((e, i, a) => {
       if (e.name === name) {
         a.splice(i, 1);
@@ -67,12 +67,7 @@ console.log(OneEyeOnYou.status());
 console.log(BlackBeard.howsItGoingMate());
 console.log(OneEyeOnYou.howsItGoingMate());
 BlackBeard.drinkSomeRum(5);
-OneEyeOnYou.drinkSomeRum(3);
+OneEyeOnYou.drinkSomeRum(16);
+BlackBeard.drinkSomeRum(5);
 console.log(BlackBeard.howsItGoingMate());
 console.log(OneEyeOnYou.howsItGoingMate());
-BlackBeard.die('Miki');
-console.log(BlackBeard.howsItGoingMate());
-console.log(BlackBeard.status());
-BlackBeard.die('Miki');
-BlackBeard.die('Riki');
-console.log(BlackBeard.status());
