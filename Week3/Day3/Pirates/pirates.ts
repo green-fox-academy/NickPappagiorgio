@@ -12,16 +12,23 @@ class PirateCrews {
   howsItGoingMate() {
     return this.pirateCrew.map(pirate => pirate.howsItGoingMate()).join('\n');
   }
-  drinkSomeRum(howMany?: number) {
-    this.pirateCrew.map(pirate => pirate.drinkSomeRum(howMany));
-  }
-  die(name?: string) {
-    this.pirateCrew.map((e, i, a) => {
-      if (e.name === name) {
+  drinkSomeRum(howMany: number) {
+    this.pirateCrew.map((pirate, i, a) => {
+      if (pirate.intoxicates > 15) {
         a.splice(i, 1);
+        console.log(`R.I.P ${pirate.name}, he drank too much.`);
+      } else {
+        return pirate.drinkSomeRum(howMany);
       }
     })
-    console.log(`R.I.P ${name}`);
+  }
+  die(name?: string) {
+    this.pirateCrew.map((pirate, i, a) => {
+      if (pirate.name === name) {
+        a.splice(i, 1);
+        console.log(`R.I.P ${pirate.name}`);
+      }
+    })
   }
 }
 
@@ -40,7 +47,7 @@ class Pirate extends PirateCrews {
     this.eyes = eyes || 2;
     this.woodenLeg = woodenLeg || false;
   }
-  drinkSomeRum(howMany?: number) {
+  drinkSomeRum(howMany: number) {
     this.intoxicates += howMany;
   };
   howsItGoingMate() {
@@ -66,8 +73,12 @@ console.log(BlackBeard.status());
 console.log(OneEyeOnYou.status());
 console.log(BlackBeard.howsItGoingMate());
 console.log(OneEyeOnYou.howsItGoingMate());
-BlackBeard.drinkSomeRum(5);
-OneEyeOnYou.drinkSomeRum(16);
-BlackBeard.drinkSomeRum(5);
+BlackBeard.drinkSomeRum(2);
+OneEyeOnYou.drinkSomeRum(5);
+BlackBeard.drinkSomeRum(3);
 console.log(BlackBeard.howsItGoingMate());
 console.log(OneEyeOnYou.howsItGoingMate());
+BlackBeard.die('Riki');
+console.log(BlackBeard.status());
+BlackBeard.drinkSomeRum(6);
+BlackBeard.drinkSomeRum(1);
