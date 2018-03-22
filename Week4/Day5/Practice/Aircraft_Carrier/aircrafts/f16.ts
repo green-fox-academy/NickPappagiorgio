@@ -2,7 +2,8 @@
 
 import { Aircraft } from "./aircrafts";
 
-class F16 extends Aircraft {
-  maxAmmo = 8;
-  baseDamage = 30;
+export class F16 extends Aircraft {
+  aircraftType: string = 'F16';
+  maxAmmo: number = 8;
+  baseDamage: number = 30;
 }

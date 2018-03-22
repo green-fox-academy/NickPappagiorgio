@@ -1,15 +1,15 @@
 'use strict';
 
 export abstract class Aircraft {
-  private aircraftType: string;
+  aircraftType: string;
   ammo: number = 0;
   maxAmmo: number;
   baseDamage: number;
 
   fight(): number {
-    let aboard = this.ammo;
+    let onPlane = this.ammo;
     this.ammo = 0;
-    return aboard * this.baseDamage;
+    return onPlane * this.baseDamage;
   }
 
   refill(addBullets: number): number {
