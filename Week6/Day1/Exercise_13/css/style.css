@@ -1,0 +1,85 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: purple;
+}
+
+.headerone {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.headertwo {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.link {
+  background: aqua;
+  width: 50px;
+  height: 25px;
+  margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  height: auto;
+}
+
+.main {
+  background: yellow;
+  flex: 2;
+  padding: 0 5px;
+}
+
+.mainboxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainbox {
+  background: red;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.mainSecondPara {
+  display: flex;
+}
+
+.mainSecondPara p {
+  padding: 0 8px;
+  text-align: justify;
+}
+
+.side-green {
+  background: greenyellow;
+  flex: 1;
+  padding: 0 5px;
+}
+
+.side-green p {
+  padding: 0 5px;
+  text-align: justify;
+}
+
+.sideboxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.sidebox {
+  background: purple;
+  margin: 5px;
+  width: 100%;
+  height: 30px;
+}
