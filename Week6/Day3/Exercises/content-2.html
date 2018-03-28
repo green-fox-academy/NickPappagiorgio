@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Workshop: innerHTML, textContent</title>
-  </head>
-  <body>
-    <ul>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-    </ul>
 
-    <!-- You can work in the html or in a separate js file. Like:
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+  <ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+  </ul>
+
+  <!-- You can work in the html or in a separate js file. Like:
     <script>
       1) replace the list items' content with items from this list:
       ['apple', 'banana', 'cat', 'dog']
+
       2) change the <ul> element's background color to 'limegreen'
         - don't just add a CSS class
         - use the .style attribute
     </script>
     OR
     <script src="content-2.js"></script> -->
-  </body>
+
+  <script>
+    let array = ['apple', 'banana', 'cat', 'dog'];
+    let lis = document.querySelectorAll('li');
+    lis.forEach((e, i, a) => {
+      e.innerHTML = array[i];
+      e.style.backgroundColor = 'limegreen';
+    })
+    console.log(lis);
+
+  </script>
+
+</body>
+
 </html>
