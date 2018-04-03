@@ -81,10 +81,11 @@ app.post('/dountil/:what', (req, res) => {
     var fact = 1;
     if (number === 0) {
       fact = 1;
-    } else { 
-    for (var i = 1; i <= number; i++) {
-      fact = fact * i;
-    }};
+    } else {
+      for (var i = 1; i <= number; i++) {
+        fact = fact * i;
+      }
+    };
     res.json({
       result: fact,
     });
