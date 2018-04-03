@@ -91,3 +91,38 @@ app.post('/dountil/:what', (req, res) => {
     });
   }
 });
+
+app.post('/arrays', (req, res) => {
+  const what = req.body.what;
+  const array = req.body.numbers;
+
+  if (what === undefined) {
+    res.json({
+      error: "Please provide what to do with the numbers!"
+    });
+  } else if (what === "sum") {
+    var result = 0;
+    for (var i = 0; i < array.length; i++) {
+      result += array[i];
+    }
+    res.json({
+      result: result,
+    });
+  } else if (what === "multiply") {
+    var result = 1;
+    for (var i = 0; i < array.length; i++) {
+      result *= array[i];
+    }
+    res.json({
+      result: result,
+    });
+  } else if (what === "double") {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+      result.push(array[i] * 2);
+    }
+    res.json({
+      result: result,
+    });
+  }
+});
