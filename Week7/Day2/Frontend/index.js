@@ -126,3 +126,42 @@ app.post('/arrays', (req, res) => {
     });
   }
 });
+
+app.post('/sith', (req, res) => {
+
+  if (req.body.text === undefined) {
+    res.json({
+      error: "Feed me some text you have to, padawan young you are. Hmmm.",
+    });
+  }
+
+  const text = `${req.body.text.toLowerCase()} `;
+  const textArray = text.split('. ');
+  const newTextArray = [];
+
+  for (var i = 0; i < textArray.length - 1; i++) {
+    newTextArray.push(textArray[i].split(' '));
+  }
+
+  var string = "";
+  for (var i = 0; i < newTextArray.length; i++) {
+    for (var j = 0; j < newTextArray[i].length; j += 2) {
+      if (newTextArray[i][j + 1] !== undefined) {
+        string += newTextArray[i][j + 1] + " ";
+        string += newTextArray[i][j] + " ";
+        if (newTextArray[i].length - 1 <= j) {
+          string = string.slice(0, -1);
+        }
+      } else {
+        string += newTextArray[i][j] + " ";
+        if (newTextArray[i].length - 1 <= j) {
+          string = string.slice(0, -1);
+        }
+      }
+    } string += ". ";
+  }
+
+  res.json({
+    result: string,
+  });
+});
