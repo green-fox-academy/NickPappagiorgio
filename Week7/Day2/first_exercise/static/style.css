@@ -1,0 +1,7 @@
+h1 {
+  color: tomato;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(22, 135, 237), rgb(20, 55, 90));
+}
