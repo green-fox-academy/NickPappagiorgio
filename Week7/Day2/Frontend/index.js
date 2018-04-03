@@ -61,7 +61,32 @@ app.get('/appenda/:appended', (req, res) => {
     res.status(404);
   } else {
     res.json({
-      appended: word + 'a'
+      appended: word + 'a',
     });
+  }
+});
+
+app.post('/dountil/:what', (req, res) => {
+  const number = req.body.until;
+  const what = req.params.what;
+  if (what === undefined) {
+    res.json({
+      error: "Please provide a number!",
+    })
+  } else if (what === 'sum') {
+    res.json({
+      result: number * (number + 1) / 2,
+    })
+  } else if (what === 'factor') {
+    var fact = 1;
+    if (number === 0) {
+      fact = 1;
+    } else { 
+    for (var i = 1; i <= number; i++) {
+      fact = fact * i;
+    }}
+    res.json({
+      result: fact,
+    })
   }
 });
