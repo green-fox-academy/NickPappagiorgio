@@ -72,11 +72,11 @@ app.post('/dountil/:what', (req, res) => {
   if (what === undefined) {
     res.json({
       error: "Please provide a number!",
-    })
+    });
   } else if (what === 'sum') {
     res.json({
       result: number * (number + 1) / 2,
-    })
+    });
   } else if (what === 'factor') {
     var fact = 1;
     if (number === 0) {
@@ -84,9 +84,9 @@ app.post('/dountil/:what', (req, res) => {
     } else { 
     for (var i = 1; i <= number; i++) {
       fact = fact * i;
-    }}
+    }};
     res.json({
       result: fact,
-    })
+    });
   }
 });
