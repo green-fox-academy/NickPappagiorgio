@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'News Cycle', sans-serif;
+  background: #333;
+}
+
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+}
+
+.question {
+  font-size: 20px;
+}
+
+.first-question {
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  background: #eee;
+  border-bottom: 3px solid black;
+  border-radius: 5px 5px 0 0;
+}
+
+.second-question{
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  background: #eee;
+  border-bottom: 3px solid black;
+}
+
+.submits {
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  background: #eee;
+  border-bottom: 3px solid black;
+  border-radius: 0 0 5px 5px;
+}
+
+.submit.one,
+.submit.two {
+  font-size: 30px;
+  border: hidden;
+  color: black;
+  background: greenyellow;
+  border-radius: 50px;
+  width: 200px;
+  margin: 5px;
+}
+
+.submit.one:disabled,
+.submit.two:disabled {
+  background: red;
+}
