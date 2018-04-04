@@ -1,0 +1,76 @@
+body {
+  font-family: 'News Cycle', sans-serif;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ebebeb;
+  height: 500px;
+  margin: 20px;
+}
+
+#loginForm {
+  margin: 0 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.loginForm {
+  font-size: 30px;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+#miniContainer {
+  padding: 5px 30px 60px 30px;
+  display: block;
+  width: 300px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 3px;
+}
+
+.username {
+  font-size: 25px;
+}
+
+input[type="email"],
+input[type="password"] {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  border: 2px solid #f6f6f6;
+  border-radius: 2px;
+  width: 93%;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border-color: #b7d6af;
+}
+
+label[for="username"],
+label[for="password"] {
+  font-size: 5px;
+}
+
+.forgot {
+  border: hidden;
+  margin-left: 190px;
+}
+
+input[type="submit"] {
+  color: #fff;
+  background-color: #333;
+  width: 100px;
+  padding: 10px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.forgot,
+input[type="submit"] {
+  display: block;
+}
