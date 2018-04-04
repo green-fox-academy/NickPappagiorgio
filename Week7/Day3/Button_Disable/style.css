@@ -18,30 +18,42 @@ body {
   font-size: 20px;
 }
 
+label {
+  margin-right: 5px;
+}
+
 .first-question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 400px;
   height: 100px;
-  background: #eee;
   border-bottom: 3px solid black;
-  border-radius: 5px 5px 0 0;
+}
+
+.secondaryDiv {
+ background: #eee;
+ border-radius: 5px;
 }
 
 .second-question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 400px;
   height: 100px;
-  background: #eee;
   border-bottom: 3px solid black;
 }
 
 .submits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 400px;
   height: 100px;
-  background: #eee;
-  border-bottom: 3px solid black;
-  border-radius: 0 0 5px 5px;
 }
 
 .submit.one,
