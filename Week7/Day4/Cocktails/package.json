@@ -1,0 +1,24 @@
+{
+  "name": "NickPappagiorgio",
+  "version": "1.0.0",
+  "description": "[I'm a git-lesson-repository link](https://github.com/NickPappagiorgio/git-lesson-repository)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenfox-academy/NickPappagiorgio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenfox-academy/NickPappagiorgio/issues"
+  },
+  "homepage": "https://github.com/greenfox-academy/NickPappagiorgio#readme",
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.16.3"
+  }
+}

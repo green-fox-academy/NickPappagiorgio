@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cocktails</title>
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+  <div id="main">
+    <div id="container">
+      <div>
+        <h1>
+          <%= string %>
+        </h1>
+      </div>
+      <div>
+        <a href="/">all</a>
+        <% alcoholList.forEach(e => { %>
+          <a href="/?alcohol=<%= e %>">
+            <%= e %>
+          </a>
+          <% }) %>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cocktails.forEach(e => { %>
+            <tr>
+              <td>
+                <div>
+                  <% let isVirgin = '';
+              if (e.isAlcoholic === false) {
+                isVirgin = '(non-alcoholic)';
+              };
+              %>
+                    <%= e.name %>
+                      <%= isVirgin %>
+                </div>
+                <div>
+                  <% let rece = '';
+                 e.contains.forEach((e, i, a) => {
+                  if (i < a.length - 1) {
+                    rece += e + ', ';
+                  } else {
+                    rece += e;
+                  }
+                }); %>
+                    <%= rece %>
+                </div>
+              </td>
+              <td>
+                <p>
+                  <%= e.price %> Zlotyi</p>
+              </td>
+            </tr>
+            <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
