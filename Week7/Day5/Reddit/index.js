@@ -45,9 +45,27 @@ app.post('/posts', (req, res) => {
     conn.query('INSERT INTO posts SET ?', newPosts, (err, rows) => {
       if (err) throw err;
 
-      res.send({post: rows});
+      res.send({ post: rows });
     });
   }
+});
+
+app.put('/posts/:id/upvote', (req, res) => {
+  conn.query('SELECT score FROM posts where id = ?;', req.params.id, (err, rows) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+    conn.query(`UPDATE posts SET score=${rows[0].score + 1} WHERE id = ${req.params.id}`, (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).send('Database error');
+        return;
+      }
+      res.status(200).send('Everything vent ok!');
+    });
+  });
 });
 
 app.listen(PORT, () => {
