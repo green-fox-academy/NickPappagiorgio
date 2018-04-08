@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="/static/home.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <title>Weather forecast</title>
+</head>
+
+<body>
+  <div id="main">
+    <div>
+      <div id="city">
+        <% weatherData.forEach((e, i) => { %>
+          <a href="/?cities=<%= e.city %>&id=<%= i %>">
+            <div class="separate <%= e.city %>">
+              <div>
+                <p class="city">
+                  <%= e.city %>
+                </p>
+                <p class="location">
+                  <%= e.location %>
+                </p>
+              </div>
+              <p class="temp">
+                <%= e.weather[0].temp %>°C</p>
+              <img class="img" src="/assets/<%= e.weather[0].icon %>.png">
+            </div>
+          </a>
+          <% }); %>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
