@@ -6,24 +6,22 @@
 //  - escape() // logs "BREAKING NEWS, [yourname] escaped the prison" to the console.
 //    - it should empties the fugitive variable
 
-function prison(string) {
-  let name = string;
+function prison(name) {
+  let prisoner = name;
   let counter = 0;
 
   return {
-    visit: function alcatraz() {
-      if (counter === 0) {
+    visit: function () {
+      if (prisoner === '') {
         console.log('Nobody is here anymore.');
       } else {
         counter++;
-        console.log(`${name} is visited ${counter} time(s).`);
+        console.log(`${prisoner} is visited ${counter} time(s).`);
       }
     },
-    escape: function alcatraz() {
-      counter = 0;
-      if (counter === 0) {
-        console.log(`BREAKING NEWS, ${name} escaped the prison.`);
-      }
+    escape: function () {
+      console.log(`BREAKING NEWS, ${prisoner} escaped the prison`);
+      prisoner = '';
     }
   }
 }
