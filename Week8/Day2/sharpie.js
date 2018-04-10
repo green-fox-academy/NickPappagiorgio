@@ -10,7 +10,7 @@ const sharpie = {
   }
 };
 
-sharpie.new('blue', 20);
+const blue = sharpie.new('blue', 20);
 
 function consumes() {
   while (sharpie.inkAmount > 0) {
