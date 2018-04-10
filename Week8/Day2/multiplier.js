@@ -1,8 +1,8 @@
 // Create the multiplier function that you can use like this:
 
-function multiplier(multiplier) {
+function multiplier(multiplyBy) {
   return function duplicator(number) {
-    return number * multiplier;
+    return number * multiplyBy;
   };
 };
 
