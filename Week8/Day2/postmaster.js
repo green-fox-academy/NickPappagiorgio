@@ -16,7 +16,7 @@ function postMaster(poBox, dispatchFunction) {
   }
 }
 
-function myAction( message ) {
+function myAction(message) {
   console.log('The message says:', message);
 }
 
