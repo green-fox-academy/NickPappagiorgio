@@ -3,8 +3,8 @@
 function multiplier(multiplyBy) {
   return function duplicator(number) {
     return number * multiplyBy;
-  };
-};
+  }
+}
 
 const duplicator = multiplier(2);
 
