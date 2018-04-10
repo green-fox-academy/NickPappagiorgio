@@ -17,16 +17,16 @@ function prison(string) {
       } else {
         counter++;
         console.log(`${name} is visited ${counter} time(s).`);
-      };
+      }
     },
     escape: function alcatraz() {
       counter = 0;
       if (counter === 0) {
         console.log(`BREAKING NEWS, ${name} escaped the prison.`);
-      };
+      }
     }
   }
-};
+}
 
 const alcatraz = prison('Sad Panda');
 
