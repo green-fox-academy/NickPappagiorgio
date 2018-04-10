@@ -11,7 +11,7 @@
 //    with the stored petrol amount as a parameter, then decrement the used petrol
 //  - Initialize the petrol amount to 3000
 
-const Car = {
+const car = {
   petrolLevel: 0,
   petrolCapacity: 50,
   refill: function (amount) {
@@ -20,10 +20,12 @@ const Car = {
   }
 };
 
-const Station = {
+const station = {
   petrolStorage: 3000,
-  provide: function () {
-    refill.bind(Car);
+  provide: function (vehicle) {
+    let amount = vehicle.petrolCapacity - vehicle.petrolLevel;
+    vehicle.refill(amount);
+    this.petrolStorage -= amount;
   }
 };
 
