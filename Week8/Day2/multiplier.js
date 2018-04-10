@@ -1,7 +1,7 @@
 // Create the multiplier function that you can use like this:
 
 function multiplier(multiplyBy) {
-  return function duplicator(number) {
+  return function (number) {
     return number * multiplyBy;
   }
 }
