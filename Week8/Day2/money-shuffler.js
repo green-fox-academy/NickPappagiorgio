@@ -3,14 +3,16 @@ const Panama = {
   name: 'Panama',
   tax: '1%',
   deposit: function(amt) {
+    this.cash += amt * 0.99;
   }
 };
 
 const Cyprus = {
   cash: 0,
   name: 'Cyprus',
-  tax: '1%',
+  tax: '5%',
   deposit: function(amt) {
+    this.cash += amt * 0.95;
   }
 };
 
@@ -20,11 +22,11 @@ const Shuffler = {
   pick: function() {
     this.cash -= 1000;
     if (this.counter % 2 === 0) {
-      Panama.cash += 1000;
-      console.log(`Panama got 1000`);
+      Panama.deposit(1000);
+      console.log(`${Panama.name} got 1000 and has ${Panama.cash}`);
     } else if (this.counter % 2 !== 0) {
-      Cyprus.cash += 1000;
-      console.log(`Cyprus got 1000`);
+      Cyprus.deposit(1000);
+      console.log(`${Cyprus.name} got 1000 and has ${Cyprus.cash}`);
     }
     this.counter ++;    
   }
