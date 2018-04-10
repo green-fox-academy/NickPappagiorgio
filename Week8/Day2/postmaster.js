@@ -9,8 +9,10 @@
 
 function postMaster(poBox, dispatchFunction) {
   // your code here
-  targetBox: function() {
-    
+  return function (targetBox, message) {
+    if (poBox === targetBox) {
+      dispatchFunction(message);
+    }
   }
 }
 
