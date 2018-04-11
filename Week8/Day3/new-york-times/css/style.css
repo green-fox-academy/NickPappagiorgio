@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #333;
+}
+
+.outer {
+  padding: 30px;
+}
+
+a {
+  color: gray;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+li {
+  color: springgreen;
+  margin-bottom: 30px;
+}
