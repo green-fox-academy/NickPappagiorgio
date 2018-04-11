@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <a class="nav-item" href="/">All</a>
+        <a class="nav-item" href="/?type=entertainment">Entertainment</a>
+        <a class="nav-item" href="/?type=groceries">Groceries</a>
+        <a class="nav-item" href="/?type=restaurant">Restaurant</a>
+        <a class="nav-item" href="/?type=services">Services</a>
+        <a class="nav-item" href="/?type=transport">Transport</a>
+      </nav>
+
+      <main class="main">
+        <h1>Your last 15 items</h1>
+        <div id="history">
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
