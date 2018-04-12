@@ -14,6 +14,39 @@
   <header>
     <p>SPACE</p>
   </header>
+
+  <div>
+    <form action="/post" method="POST">
+      <input type="text" id="inputTitle">
+      <input type="text" id="inputUrl">
+      <input type="submit" id="submitPost">
+    </form>
+  </div>
+
+  <div id="posts">
+    <% posts.forEach(e => { %>
+      <div class="posts-item">
+        <div class="item-title">
+          <h1>
+            <%= e.title %>
+          </h1>
+        </div>
+        <div class="item-score">
+          <%= e.score %>
+        </div>
+        <div class="item-owner">
+          <a href="<%= e.url %>" target="_blank">
+            <%= e.url %>
+          </a>
+        </div>
+        <div class="item-date">
+          <%=  %>
+        </div>
+      </div>
+      <% }); %>
+  </div>
+
+  <script src="../static/script.js"></script>
 </body>
 
 </html>

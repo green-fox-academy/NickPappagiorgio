@@ -18,15 +18,13 @@ const conn = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
-});
-
-app.get('/posts', (req, res) => {
   conn.query('SELECT * FROM posts;', (err, result) => {
     if (err) {
       res.satus(500).send('Database error');
     }
-    res.json(result);
+    res.render('index', {
+      posts: result,
+    });
   });
 });
 

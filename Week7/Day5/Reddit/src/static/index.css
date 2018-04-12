@@ -9,8 +9,18 @@ html {
 }
 
 header {
+  display: flex;
   background-image: url('img/title.jpg');
   background-size: cover;
   height: 20rem;
+  justify-content: center;
+  align-items: center;
 }
 
+header > p {
+  color: black;
+  font-size: 5rem;
+  letter-spacing: 2rem;
+  font-weight: 100;
+  text-shadow: 2px 2px #f3f3f3;
+}
