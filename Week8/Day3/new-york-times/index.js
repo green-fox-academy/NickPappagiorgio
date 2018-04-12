@@ -1,6 +1,6 @@
 let httpRequest = new XMLHttpRequest();
 
-httpRequest.open('GET', "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=apollo+11&api-key=86c4e50976d74bb2bc96ab155257c1f5")
+httpRequest.open('GET', "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=apollo11&api-key=86c4e50976d74bb2bc96ab155257c1f5")
 
 httpRequest.onload = () => {
   let data = JSON.parse(httpRequest.responseText);
