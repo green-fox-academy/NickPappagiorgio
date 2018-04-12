@@ -1,71 +1,89 @@
 const express = require('express');
+const mysql = require('mysql');
+
 const app = express();
 const PORT = 3000;
-let mysql = require('mysql');
 
 app.use(express.json());
 
-let conn = mysql.createConnection({
+const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'batman',
-  database: 'reddit'
+  database: 'reddit',
 });
 
-conn.connect(err => {
-  if (err) {
-    console.log('Error connecting to Db');
-    return;
-  }
-  console.log('Connection established');
-});
-
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/posts', function (req, res) {
-  conn.query('SELECT * FROM posts;', (err, rows) => {
+app.get('/posts', (req, res) => {
+  conn.query('SELECT * FROM posts;', (err, result) => {
     if (err) {
-      console.log(err.toString());
       res.satus(500).send('Database error');
-      return;
     }
-    res.send({ posts: rows });
+    res.json(result);
   });
 });
 
 app.post('/posts', (req, res) => {
-  const title = req.body.title;
-  const url = req.body.url;
-  if (title === undefined || url === undefined) {
-    res.json({ error: 'Please provide all data what needed.' });
+  const inputTitle = req.body.title;
+  const inputUrl = req.body.url;
+  if (inputTitle === undefined || inputUrl === undefined) {
+    res.json({ error: 'Please provide all data what is needed.' });
   } else {
-    const newPosts = { title: title, url: url };
-    conn.query('INSERT INTO posts SET ?', newPosts, (err, rows) => {
+    const newPosts = { title: inputTitle, url: inputUrl };
+    conn.query('INSERT INTO posts SET ?', newPosts, (err, result) => {
       if (err) throw err;
-
-      res.send({ post: rows });
+      res.json(result);
     });
   }
 });
 
 app.put('/posts/:id/upvote', (req, res) => {
-  conn.query('SELECT score FROM posts where id = ?;', req.params.id, (err, rows) => {
+  conn.query(`UPDATE posts SET score = score + 1 WHERE id = ${req.params.id};`, (err, result) => {
     if (err) {
-      console.log(err.toString());
       res.status(500).send('Database error');
-      return;
+    } else {
+      res.json(result);
     }
-    conn.query(`UPDATE posts SET score=${rows[0].score + 1} WHERE id = ${req.params.id}`, (err, rows) => {
-      if (err) {
-        console.log(err.toString());
-        res.status(500).send('Database error');
-        return;
-      }
-      res.status(200).send('Everything vent ok!');
-    });
   });
+});
+
+app.put('/posts/:id/downvote', (req, res) => {
+  conn.query(`UPDATE posts SET score = score - 1 WHERE id = ${req.params.id};`, (err, result) => {
+    if (err) {
+      res.status(500).send('Database error');
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.delete('/posts/:id', (req, res) => {
+  conn.query(`DELETE FROM posts WHERE id = ${req.params.id};`, (err, result) => {
+    if (err) {
+      res.status(500).send('Database error');
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.put('/posts/:id', (req, res) => {
+  const inputTitle = req.body.title;
+  const inputUrl = req.body.url;
+  if (inputTitle === undefined || inputUrl === undefined) {
+    res.json({ error: 'Please provide all data what is needed.' });
+  } else {
+    conn.query(`UPDATE posts SET title = '${inputTitle}', url = '${inputUrl}' WHERE id = ${req.params.id};`, (err, result) => {
+      if (err) {
+        res.status(500).send('Database error');
+      } else {
+        res.json(result);
+      }
+    });
+  }
 });
 
 app.listen(PORT, () => {
