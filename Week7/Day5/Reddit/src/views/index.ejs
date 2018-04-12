@@ -15,11 +15,12 @@
     <p>SPACE</p>
   </header>
 
-  <div>
+  <div class="form">
+    <h2>Create Post</h2>
     <form action="/post" method="POST">
-      <input type="text" id="inputTitle">
-      <input type="text" id="inputUrl">
-      <input type="submit" id="submitPost">
+      <input type="text" id="inputTitle" placeholder="Title" required>
+      <input type="text" id="inputUrl" placeholder="URL" required>
+      <input type="submit" id="submitPost" value="POST">
     </form>
   </div>
 
@@ -34,13 +35,13 @@
         <div class="item-score">
           <%= e.score %>
         </div>
-        <div class="item-owner">
+        <div class="item-url">
           <a href="<%= e.url %>" target="_blank">
             <%= e.url %>
           </a>
         </div>
         <div class="item-date">
-          <%=  %>
+          <%= e.timestamp.toString().slice(0, 24) %>
         </div>
       </div>
       <% }); %>
