@@ -1,5 +1,4 @@
 document.querySelector('#submitPost').addEventListener('click', (e) => {
-
   const httpRequest = new XMLHttpRequest();
 
   httpRequest.open('POST', 'http://localhost:3000/posts');
