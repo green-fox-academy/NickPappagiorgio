@@ -63,7 +63,7 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
         document.querySelector('#posts').appendChild(postsItemDiv);
 
         document.querySelector('#inputTitle').value = '';
-        document.querySelector('#inputUrl').value = '';
+        document.querySelector('#inputUrl').value = 'http://';
       }
     };
 
