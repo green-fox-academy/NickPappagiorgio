@@ -5,7 +5,7 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
   if (title !== '' && url !== '') {
     const httpRequest = new XMLHttpRequest();
 
-    httpRequest.open('POST', 'http://localhost:3000/posts');
+    httpRequest.open('POST', '/posts');
     httpRequest.setRequestHeader('Content-Type', 'application/json');
     httpRequest.onload = (event) => {
       console.log(event);
@@ -26,16 +26,18 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
         upArrowImg.className = 'up-arrow';
         upArrowImg.src = '../static/img/upvote.png';
         upArrowImg.alt = 'upvote';
-        upArrowImg.data-id = event.target.response.insertId;
+        upArrowImg.setAttribute('data-id', JSON.parse(event.target.response).insertId);
 
         const itemScoreP = document.createElement('p');
+        itemScoreP.className = 'scores';
         itemScoreP.innerText = 0;
+        itemScoreP.setAttribute('data-id', JSON.parse(event.target.response).insertId);
 
         const downArrowImg = document.createElement('img');
         downArrowImg.className = 'down-arrow';
         downArrowImg.src = '../static/img/downvote.png';
         downArrowImg.alt = 'downvote';
-        downArrowImg.setAttribute('data-id', event.target.response.insertId);
+        downArrowImg.setAttribute('data-id', JSON.parse(event.target.response).insertId);
 
         const itemUrlDiv = document.createElement('div');
         itemUrlDiv.className = 'item-url';
@@ -76,7 +78,7 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
 document.querySelector('#deletePost').addEventListener('click', (e) => {
   const httpRequest = new XMLHttpRequest();
 
-  httpRequest.open('DELETE', 'http://localhost:3000/delete');
+  httpRequest.open('DELETE', '/delete');
   httpRequest.setRequestHeader('Content-Type', 'application/json');
 
   httpRequest.onload = (event) => {
@@ -88,20 +90,41 @@ document.querySelector('#deletePost').addEventListener('click', (e) => {
   }));
   e.preventDefault();
 });
-/////////////////////////////////////////////////////////////////////////////////
-document.querySelector('.up-arrow').addEventListener('click', (e) => {
-  const httpRequest = new XMLHttpRequest();
 
-  httpRequest.open('DELETE', 'http://localhost:3000/delete');
-  httpRequest.setRequestHeader('Content-Type', 'application/json');
+document.querySelectorAll('.up-arrow')
+  .forEach((e) => {
+    e.addEventListener('click', (e) => {
+      const httpRequest = new XMLHttpRequest();
 
-  httpRequest.onload = (event) => {
+      httpRequest.open('PUT', `/posts/${e.target.dataset.id}/upvote`);
+      httpRequest.setRequestHeader('Content-Type', 'application/json');
 
-    document.querySelector('#deleteTitle').value = '';
-  };
+      httpRequest.onload = (event) => {
+        e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) + 1;
+      };
 
-  httpRequest.send(JSON.stringify({
-    title: document.querySelector('#deleteTitle').value,
-  }));
-  e.preventDefault();
-});
+      httpRequest.send(JSON.stringify({
+        id: document.querySelector('.up-arrow'),
+      }));
+      e.preventDefault();
+    });
+  });
+
+document.querySelectorAll('.down-arrow')
+  .forEach((e) => {
+    e.addEventListener('click', (e) => {
+      const httpRequest = new XMLHttpRequest();
+
+      httpRequest.open('PUT', `/posts/${e.target.dataset.id}/downvote`);
+      httpRequest.setRequestHeader('Content-Type', 'application/json');
+
+      httpRequest.onload = (event) => {
+        e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) - 1;
+      };
+
+      httpRequest.send(JSON.stringify({
+        id: document.querySelector('.down-arrow'),
+      }));
+      e.preventDefault();
+    });
+  });
