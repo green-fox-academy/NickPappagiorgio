@@ -8,6 +8,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
 header {
   display: flex;
   background-image: url('img/title.jpg');
@@ -16,37 +20,53 @@ header {
   height: 20rem;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
 header > p {
   color: black;
-  font-size: 5rem;
+  font-size: 6rem;
   letter-spacing: 2rem;
   font-weight: 100;
-  text-shadow: 2px 2px #f3f3f3;
+  text-shadow: 2px 2px seashell;
 }
 
-.form h2 {
-  color: white;
+#forms {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.form h2,
+.deleteForm h2,
+.item-url > a,
+.item-date {
+  color: seashell;
   text-align: center;
-  font-weight:300;
-  text-transform:uppercase;
-  letter-spacing:2px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.form {
+.form,
+.deleteForm,
+.posts-item {
   background-color: rgb(64,64,64);
   padding: 10px;
-  width: 20%;
-  margin: auto;
+  width: 15rem;
+  margin: 1rem;
   border-radius: 10px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
 }
 
 input[type="text"] {
   margin: 15px auto;
   padding: 10px;
-  width:55%;
+  width: 75%;
   background-color: #f5f8fa;
   border-radius: 21px;
   border: 1px solid #e6ecf0;
@@ -58,12 +78,9 @@ input[type="text"] {
   transition: all .2s ease-in-out;
 }
 
-input {
-  outline: none;
-}
-
 input[type="text"], input[type="submit"] {
   box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 1px 1px rgba(0,0,0,.16);
+  outline: none;
 }
 
 input[type="text"]:focus {
@@ -71,24 +88,26 @@ input[type="text"]:focus {
 }
 
 input[type="submit"] {
-  display:block;
+  display: block;
   margin: 30px auto;
   border-radius: 21px;
   border: none;
   padding: 10px;
   width: 60%;
-  cursor:pointer;
-  text-transform:uppercase;
-  transition:0.5s all ease-in-out;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s all ease-in-out;
 }
 
 input[type="submit"]:hover {
-  letter-spacing:5px;
-  font-weight:bold;
+  letter-spacing: 5px;
+  font-weight: bold;
 }
 
-.form {
-  background: linear-gradient(182deg, #a8e3f2, #3d8fb8, #136f9c);
+.form,
+.deleteForm,
+.posts-item {
+  background: linear-gradient(182deg, #0f0c29, #302b63, #24243e);
   background-size: 600% 600%;
   -webkit-animation: AnimationName 30s ease infinite;
   -moz-animation: AnimationName 30s ease infinite;
@@ -96,20 +115,84 @@ input[type="submit"]:hover {
 
 
   @-webkit-keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
+    0%{background-position: 0% 30%}
+    50%{background-position: 100% 71%}
+    100%{background-position: 0% 30%}
   }
 
   @-moz-keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
+    0%{background-position: 0% 30%}
+    50%{background-position: 100% 71%}
+    100%{background-position: 0% 30%}
   }
 
   @keyframes AnimationName {
-    0%{background-position:0% 30%}
-    50%{background-position:100% 71%}
-    100%{background-position:0% 30%}
+    0%{background-position: 0% 30%}
+    50%{background-position: 100% 71%}
+    100%{background-position: 0% 30%}
   }
+}
+
+#posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.posts-item {
+  align-items: center;
+  width: auto;
+  margin: 1rem;
+}
+
+.item-title,
+.item-score > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 4rem;
+  font-weight: 100;
+  text-shadow: 2px 2px seashell;
+}
+
+.item-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.item-score > p {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.item-score > img {
+  width: 2rem;
+}
+
+.up-arrow:hover {
+  background-image: url(img/upvoted.png)
+}
+
+.down-arrow:hover {
+  background-image: url(img/downvoted.png)
+}
+
+.item-url > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.item-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: gray;
 }

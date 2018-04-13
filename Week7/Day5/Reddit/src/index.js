@@ -33,7 +33,7 @@ app.post('/posts', (req, res) => {
   if (req.body.title === undefined || req.body.url === undefined) {
     res.json({ error: 'Please provide all data what is needed.' });
   } else {
-    conn.query('INSERT INTO posts SET ?', newPosts, (err, result) => {
+    conn.query('INSERT INTO posts SET ?;', newPosts, (err, result) => {
       if (err) throw err;
       res.json(result);
     });
@@ -60,14 +60,18 @@ app.put('/posts/:id/downvote', (req, res) => {
   });
 });
 
-app.delete('/posts/:id', (req, res) => {
-  conn.query(`DELETE FROM posts WHERE id = ${req.params.id};`, (err, result) => {
-    if (err) {
-      res.status(500).send('Database error');
-    } else {
-      res.json(result);
-    }
-  });
+app.delete('/delete', (req, res) => {
+  if (req.body.title === undefined) {
+    res.json({ error: 'Please provide all data what is needed.' });
+  } else {
+    conn.query('DELETE FROM posts WHERE title = ?;', req.body.title, (err, result) => {
+      if (err) {
+        res.status(500).send('Database error');
+      } else {
+        res.json(result);
+      }
+    });
+  }
 });
 
 app.put('/posts/:id', (req, res) => {

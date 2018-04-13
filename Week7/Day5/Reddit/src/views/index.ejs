@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   <link rel="stylesheet" href="../static/index.css">
+  <link rel="icon" sizes="60x60" href="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-60x60.png">
   <title>Reddit</title>
 </head>
 
@@ -15,33 +16,48 @@
     <p>SPACE</p>
   </header>
 
-  <div class="form">
-    <h2>Create Post</h2>
-    <form action="/post" method="POST">
-      <input type="text" id="inputTitle" placeholder="Title" required>
-      <input type="text" id="inputUrl" placeholder="URL" required>
-      <input type="submit" id="submitPost" value="POST">
-    </form>
+  <div id="forms">
+    <div class="form">
+      <h2>Create Post</h2>
+      <form action="/posts" method="POST">
+        <input type="text" id="inputTitle" placeholder="Title" required>
+        <input type="text" id="inputUrl" placeholder="URL" required>
+        <input type="submit" id="submitPost" value="POST">
+      </form>
+    </div>
+
+    <div class="deleteForm">
+      <h2>Delete Post</h2>
+      <form action="/delete" method="DELETE">
+        <input type="text" id="deleteTitle" placeholder="Title" required>
+        <input type="submit" id="deletePost" value="DELETE">
+      </form>
+    </div>
   </div>
 
   <div id="posts">
     <% posts.forEach(e => { %>
       <div class="posts-item">
         <div class="item-title">
-          <h1>
+          <p>
             <%= e.title %>
-          </h1>
+          </p>
         </div>
         <div class="item-score">
-          <%= e.score %>
+          <img data-id="<%= e.id %>" class="up-arrow" src="../static/img/upvote.png" alt="upvote">
+          <p>
+            <%= e.score %>
+          </p>
+          <img data-id="<%= e.id %>" class="down-arrow" src="../static/img/downvote.png" alt="downvote">
         </div>
         <div class="item-url">
           <a href="<%= e.url %>" target="_blank">
+            Link:
             <%= e.url %>
           </a>
         </div>
         <div class="item-date">
-          <%= e.timestamp.toString().slice(0, 24) %>
+          <%= `The post has been created: ${e.timestamp.toString().slice(0, 24)}` %>
         </div>
       </div>
       <% }); %>
