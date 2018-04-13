@@ -1,8 +1,8 @@
 document.querySelector('#submitPost').addEventListener('click', (e) => {
-  const title = document.querySelector('#inputTitle').value;
-  const url = document.querySelector('#inputUrl').value;
+  const inputTitle = document.querySelector('#inputTitle').value;
+  const inputUrl = document.querySelector('#inputUrl').value;
 
-  if (title !== '' && url !== '') {
+  if (inputTitle !== '' && inputUrl !== '') {
     const httpRequest = new XMLHttpRequest();
 
     httpRequest.open('POST', '/posts');
@@ -17,7 +17,7 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
         itemTitleDiv.className = 'item-title';
 
         const titlePTag = document.createElement('p');
-        titlePTag.innerText = title;
+        titlePTag.innerText = inputTitle;
 
         const itemScoreDiv = document.createElement('div');
         itemScoreDiv.className = 'item-score';
@@ -43,9 +43,9 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
         itemUrlDiv.className = 'item-url';
 
         const itemUrlATag = document.createElement('a');
-        itemUrlATag.href = url;
+        itemUrlATag.href = inputUrl;
         itemUrlATag.target = '_blank';
-        itemUrlATag.innerText = `Link: ${url}`;
+        itemUrlATag.innerText = `Link: ${inputUrl}`;
 
         const itemDateDiv = document.createElement('div');
         itemDateDiv.className = 'item-date';
@@ -68,63 +68,67 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
     };
 
     httpRequest.send(JSON.stringify({
-      title: document.querySelector('#inputTitle').value,
-      url: document.querySelector('#inputUrl').value,
+      title: inputTitle,
+      url: inputUrl,
     }));
   }
   e.preventDefault();
 });
 
-document.querySelector('#deletePost').addEventListener('click', (e) => {
+document.querySelector('#deletePost').addEventListener('click', (event) => {
   const httpRequest = new XMLHttpRequest();
+  const deleteTitle = document.querySelector('#deleteTitle').value;
 
   httpRequest.open('DELETE', '/delete');
   httpRequest.setRequestHeader('Content-Type', 'application/json');
 
-  httpRequest.onload = (event) => {
+  httpRequest.onload = () => {
+    document.querySelectorAll('.posts-item').forEach((e) => {
+      if (e.querySelector('p').innerText === deleteTitle) {
+        e.parentNode.removeChild(e);
+      }
+    });
     document.querySelector('#deleteTitle').value = '';
   };
 
   httpRequest.send(JSON.stringify({
     title: document.querySelector('#deleteTitle').value,
   }));
-  e.preventDefault();
+  event.preventDefault();
 });
 
-document.querySelectorAll('.up-arrow')
-  .forEach((e) => {
-    e.addEventListener('click', (e) => {
-      const httpRequest = new XMLHttpRequest();
+document.querySelectorAll('.up-arrow').forEach((event) => {
+  event.addEventListener('click', (e) => {
+    const httpRequest = new XMLHttpRequest();
 
-      httpRequest.open('PUT', `/posts/${e.target.dataset.id}/upvote`);
-      httpRequest.setRequestHeader('Content-Type', 'application/json');
+    httpRequest.open('PUT', `/posts/${e.target.dataset.id}/upvote`);
+    httpRequest.setRequestHeader('Content-Type', 'application/json');
 
-      httpRequest.onload = (event) => {
-        e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) + 1;
-      };
+    httpRequest.onload = () => {
+      e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) + 1;
+    };
 
-      httpRequest.send(JSON.stringify({
-        id: document.querySelector('.up-arrow'),
-      }));
-      e.preventDefault();
-    });
+    httpRequest.send(JSON.stringify({
+      id: document.querySelector('.up-arrow'),
+    }));
+    e.preventDefault();
   });
+});
 
-document.querySelectorAll('.down-arrow')
-  .forEach((e) => {
-    e.addEventListener('click', (e) => {
-      const httpRequest = new XMLHttpRequest();
+document.querySelectorAll('.down-arrow').forEach((event) => {
+  event.addEventListener('click', (e) => {
+    const httpRequest = new XMLHttpRequest();
 
-      httpRequest.open('PUT', `/posts/${e.target.dataset.id}/downvote`);
-      httpRequest.setRequestHeader('Content-Type', 'application/json');
+    httpRequest.open('PUT', `/posts/${e.target.dataset.id}/downvote`);
+    httpRequest.setRequestHeader('Content-Type', 'application/json');
 
-      httpRequest.onload = (event) => {
-        e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) - 1;
-      };
+    httpRequest.onload = () => {
+      e.target.parentNode.childNodes[3].innerText = parseInt(e.target.parentNode.childNodes[3].innerText) - 1;
+    };
 
-      httpRequest.send(JSON.stringify({
-        id: document.querySelector('.down-arrow'),
-      }));
-      e.preventDefault();
-    });
+    httpRequest.send(JSON.stringify({
+      id: document.querySelector('.down-arrow'),
+    }));
+    e.preventDefault();
   });
+});

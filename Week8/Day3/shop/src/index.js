@@ -65,7 +65,6 @@ app.get('/api/history', (req, res) => {
 
 app.get('/api/types', (req, res) => {
   const sql = 'SELECT * FROM types;';
-  
   conn.query(sql, (err, result) => {
     if (err) {
       console.log(err); // eslint-disable-line
