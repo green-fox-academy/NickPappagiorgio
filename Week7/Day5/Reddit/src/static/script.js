@@ -1,14 +1,13 @@
+const httpRequest = new XMLHttpRequest();
+
 document.querySelector('#submitPost').addEventListener('click', (e) => {
   const inputTitle = document.querySelector('#inputTitle').value;
   const inputUrl = document.querySelector('#inputUrl').value;
 
   if (inputTitle !== '' && inputUrl !== '') {
-    const httpRequest = new XMLHttpRequest();
-
     httpRequest.open('POST', '/posts');
     httpRequest.setRequestHeader('Content-Type', 'application/json');
     httpRequest.onload = (event) => {
-      console.log(event);
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
         const postsItemDiv = document.createElement('div');
         postsItemDiv.className = 'posts-item';
@@ -76,7 +75,6 @@ document.querySelector('#submitPost').addEventListener('click', (e) => {
 });
 
 document.querySelector('#deletePost').addEventListener('click', (event) => {
-  const httpRequest = new XMLHttpRequest();
   const deleteTitle = document.querySelector('#deleteTitle').value;
 
   httpRequest.open('DELETE', '/delete');
@@ -99,8 +97,6 @@ document.querySelector('#deletePost').addEventListener('click', (event) => {
 
 document.querySelectorAll('.up-arrow').forEach((event) => {
   event.addEventListener('click', (e) => {
-    const httpRequest = new XMLHttpRequest();
-
     httpRequest.open('PUT', `/posts/${e.target.dataset.id}/upvote`);
     httpRequest.setRequestHeader('Content-Type', 'application/json');
 
@@ -117,8 +113,6 @@ document.querySelectorAll('.up-arrow').forEach((event) => {
 
 document.querySelectorAll('.down-arrow').forEach((event) => {
   event.addEventListener('click', (e) => {
-    const httpRequest = new XMLHttpRequest();
-
     httpRequest.open('PUT', `/posts/${e.target.dataset.id}/downvote`);
     httpRequest.setRequestHeader('Content-Type', 'application/json');
 
