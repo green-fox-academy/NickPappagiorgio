@@ -23,7 +23,7 @@ module.exports = function (black, white) {
       }
     }
   };
-  
+
   if (highestBlackValue > highestWhiteValue) {
     return `Black wins! - (High card: ${result[highestBlackValue]})`;
   }
