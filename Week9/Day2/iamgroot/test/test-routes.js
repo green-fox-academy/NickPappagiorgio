@@ -88,7 +88,62 @@ test('groot endpoint', (t) => {
     .expect(400)
     .expect({
       error: "I am Groot!"
-  })
+    })
+    .end((err, res) => {
+      t.error(err);
+    });
+
+  request(app)
+    .get('/drax')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .expect([
+      {
+        "name": "Hamburger",
+        "amount": 5,
+        "calorie": 666
+      },
+      {
+        "name": "HotDog",
+        "amount": 11,
+        "calorie": 404
+      },
+      {
+        "name": "Pizza",
+        "amount": 2,
+        "calorie": 1111
+      }
+    ])
+    .end((err, res) => {
+      t.error(err);
+    });
+
+  request(app)
+    .get('/drax/add/?name=Hamburger&amount=2&calorie=404')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .expect([
+      {
+          "name": "Hamburger",
+          "amount": 5,
+          "calorie": 666
+      },
+      {
+          "name": "HotDog",
+          "amount": 11,
+          "calorie": 404
+      },
+      {
+          "name": "Pizza",
+          "amount": 2,
+          "calorie": 1111
+      },
+      {
+          "name": "Hamburger",
+          "amount": 2,
+          "calorie": 404
+      }
+  ])
     .end((err, res) => {
       t.error(err);
       t.end();
