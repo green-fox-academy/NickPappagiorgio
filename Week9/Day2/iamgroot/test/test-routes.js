@@ -27,6 +27,30 @@ test('groot endpoint', (t) => {
     })
     .end((err, res) => {
       t.error(err);
+    });
+
+  request(app)
+    .get('/yondu/?distance=100.0&time=5.0')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .expect({
+      distance: "100.0",
+      time: "5.0",
+      Speed: 20
+    })
+    .end((err, res) => {
+      t.error(err);
+    });
+
+    request(app)
+    .get('/yondu/?distance=100.0&time=0')
+    .expect('Content-Type', /json/)
+    .expect(400)
+    .expect({
+      error: "I am Groot!"
+  })
+    .end((err, res) => {
+      t.error(err);
       t.end();
     });
 });
