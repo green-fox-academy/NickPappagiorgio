@@ -55,7 +55,7 @@ app.get('/rocket', (req, res) => {
 });
 
 app.get('/rocket/fill', (req, res) => {
-  if (req.query.caliber === undefined && req.query.amount === undefined) {
+  if (req.query.caliber === undefined || req.query.amount === undefined) {
     res.status(400).json({
       error: 'I am Groot!'
     });
