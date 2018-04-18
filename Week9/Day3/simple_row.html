@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple row</title>
+  <style>
+    body {
+      color: #fff;
+    }
+
+    .container {
+      font-size: 2rem;
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      padding: .5rem;
+      background-color: purple;
+    }
+
+    div {
+      display: grid;
+      background-color: yellow;
+      height: 150px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center {
+      background-color: greenyellow;
+      margin: 0 .5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>left</div>
+    <div class="center">60 is my ratio</div>
+    <div>right</div>
+  </div>
+</body>
+
+</html>

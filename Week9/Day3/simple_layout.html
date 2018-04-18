@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple layout</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 150px auto 150px;
+      grid-template-rows: repeat(5, 100px);
+      grid-gap: 1em;
+      grid-template-areas: "header header header" "sidebar-1 sidebar-2 sidebar-2" "sidebar-1 sidebar-2 sidebar-2" "sidebar-1 sidebar-2 sidebar-2" "footer footer footer";
+    }
+
+    header {
+      grid-area: header;
+      background: purple;
+      padding: 1em;
+      display: grid;
+      grid-template-columns: 80px 80px 80px 80px;
+      grid-template-rows: 60px;
+      grid-gap: .5em;
+      align-items: center;
+    }
+
+    header>div {
+      background-color: dodgerblue;
+      height: 3em;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #ccc;
+      padding: 1em;
+      margin: 0 25px;
+    }
+
+    .sidebar-left {
+      grid-area: sidebar-1;
+      background: yellow;
+      padding: 1em;
+      margin-left: 25px;
+    }
+
+    .sidebar-right {
+      grid-area: sidebar-2;
+      background: greenyellow;
+      padding: 1em;
+      margin-right: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <header>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </header>
+
+    <aside class="sidebar-left"></aside>
+
+    <aside class="sidebar-right"></aside>
+
+    <footer></footer>
+  </div>
+</body>
+
+</html>
