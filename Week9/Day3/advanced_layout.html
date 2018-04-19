@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(2, 200px);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      margin: 10px 10vw;
+    }
+
+    header {
+      background-color: purple;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(4, 8vw);
+      grid-template-rows: repeat(1, auto);
+      margin-left: 10vw;
+    }
+
+    .link {
+      background-color: blue;
+      width: 6vw;
+      height: 3vw;
+      margin: .5vw;
+    }
+
+    .main {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+    }
+
+    .box {
+      background-color: greenyellow;
+      padding: 1vw;
+    }
+
+    .bottom-right {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(1, 200px);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+
+    .bottom-right-small {
+      background-color: greenyellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bottom-right-small>div {
+      background-color: red;
+      width: 80%;
+      height: 80%;
+    }
+
+    .footer {
+      background-color: gray;
+      width: 100%;
+      margin: 0 10vw;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="menu">
+      <div class="link"></div>
+      <div class="link"></div>
+      <div class="link"></div>
+      <div class="link"></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="grid">
+      <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus exercitationem laborum hic ab quisquam cupiditate
+          soluta numquam aliquid modi? Atque, nobis exercitationem illo corporis expedita dolorem accusamus vel sed fugit.</p>
+      </div>
+      <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fugiat. Incidunt praesentium quibusdam iusto illo
+          alias minima at nihil iste animi, cumque eaque odit asperiores quis perferendis recusandae vel laborum.</p>
+      </div>
+      <div class="box">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat, vero amet placeat ipsam nostrum hic vitae,
+          dolore provident accusamus impedit dignissimos cumque alias repellat corrupti molestias reiciendis explicabo expedita.</p>
+      </div>
+      <div class="bottom-right">
+        <div class="bottom-right-small">
+          <div></div>
+        </div>
+        <div class="bottom-right-small">
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">piblabla</div>
+  </div>
+</body>
+
+</html>
