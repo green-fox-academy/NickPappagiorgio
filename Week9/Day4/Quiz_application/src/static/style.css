@@ -33,6 +33,7 @@ body {
   height: 40vw;
   background-color: white;
   border-radius: 5px;
+  padding: 3vw;
 }
 
 .button {
@@ -41,6 +42,7 @@ body {
   margin: .5vw;
   height: 5vw;
   outline: none;
+  color: white;
 }
 
 .question {
