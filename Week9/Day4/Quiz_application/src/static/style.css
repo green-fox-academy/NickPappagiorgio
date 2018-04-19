@@ -40,6 +40,7 @@ body {
   background-color: #3498db;
   margin: .5vw;
   height: 5vw;
+  outline: none;
 }
 
 .question {
