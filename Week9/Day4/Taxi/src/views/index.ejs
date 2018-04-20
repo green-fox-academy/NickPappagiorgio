@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>TAXI manager - Cars</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/static/script.js"></script>
+</head>
+
+<body>
+  <div>
+    <span>Company filter:</span>
+    <select id="company-selector">
+      <option value="all" selected>All</option>
+    </select>
+  </div>
+  <table border="1">
+    <thead>
+      <th>company</th>
+      <th>licence plate</th>
+      <th>capacity</th>
+      <th>price</th>
+    </thead>
+
+    <tbody id="car-table-body">
+      <% cars.forEach(car => { %>
+        <tr>
+          <td>
+            <%= car.company %>
+          </td>
+          <td>
+            <%= car.licence_plate %>
+          </td>
+          <td>
+            <%= car.capacity %>
+          </td>
+          <td>
+            <%= car.price %>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+  <form id="car-form">
+    <label for="company">
+      <span>Company:</span>
+      <input type="text" id="company" name="company" value="LuxiTaxi">
+    </label>
+
+    <label for="licence">
+      <span>Licence plate:</span>
+      <input type="text" id="licence" name="licence" value="LUX-007">
+    </label>
+
+    <label for="capacity">
+      <span>Capacity:</span>
+      <input type="text" id="capacity" name="capacity" value="3">
+    </label>
+
+    <label for="price">
+      <span>Price:</span>
+      <input type="text" id="price" name="price" value="90">
+    </label>
+
+    <input type="submit">
+  </form>
+</body>
+
+</html>
