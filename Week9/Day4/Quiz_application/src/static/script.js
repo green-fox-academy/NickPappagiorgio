@@ -14,6 +14,12 @@ function getAQuestion() {
   XHR.send();
 }
 
+fetch('/game')
+  .then((response) => response.json())
+  .then((myJson) => {
+    
+  });
+
 function createTable(quiz) {
   let p = nodeCreator('p');
   p.className = 'question';
