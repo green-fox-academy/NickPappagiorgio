@@ -1,8 +1,10 @@
-<div class="tile" *ngFor="let city of forecasts" (click)="onSelect(city)">
-  <div>
-    <p class="city">{{city.city}}</p>
-    <p class="location">{{city.location}}</p>
-  </div>
-  <p class="temp">{{city.weather[0].temp}}°C</p>
-  <img src="../../assets/{{city.weather[0].icon}}.png" alt="{{city.weather[0].icon}}">
+<div *ngFor="let city of cities">
+  <a class="tile" routerLink="/forecast/{{city.city}}">
+    <div>
+      <p class="city">{{city.city}}</p>
+      <p class="location">{{city.location}}</p>
+    </div>
+    <p class="temp">{{city.weather[0].temp}}°C</p>
+    <img src="../../assets/{{city.weather[0].icon}}.png" alt="{{city.weather[0].icon}}">
+  </a>
 </div>

@@ -1,0 +1,8 @@
+<h2>{{city.city}}</h2>
+<div class="tile" *ngFor="let detail of city.weather">
+  <img src="../../assets/{{detail.icon}}.png" alt="{{detail.icon}}">
+  <div>
+    <p class="temp">{{detail.temp}}°C</p>
+    <p class="detail">{{detail.message}}</p>
+  </div>
+</div>

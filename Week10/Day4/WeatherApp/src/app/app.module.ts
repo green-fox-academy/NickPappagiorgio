@@ -5,19 +5,24 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TileComponent } from './tile/tile.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { CityService } from './city.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    TileComponent
+    TileComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [CityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

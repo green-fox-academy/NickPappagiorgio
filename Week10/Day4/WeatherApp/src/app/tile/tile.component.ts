@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { City } from '../city';
 import { FORECASTS } from '../mock-cities';
+import { CityService } from '../city.service';
 
 @Component({
   selector: 'app-tile',
@@ -9,18 +13,16 @@ import { FORECASTS } from '../mock-cities';
 })
 export class TileComponent implements OnInit {
 
-  forecasts = FORECASTS;
-  
-  selectedForecast: City;
+  cities: City[];
 
-  onSelect(city: City): void {
-    this.selectedForecast = city;
-    console.log(city.city);
-  }
-
-  constructor() { }
+  constructor(private cityService: CityService) { }
 
   ngOnInit() {
+    this.getCities();
   }
 
+  getCities(): void {
+    this.cityService.getCities()
+      .subscribe(cities => this.cities = cities);
+  }
 }
