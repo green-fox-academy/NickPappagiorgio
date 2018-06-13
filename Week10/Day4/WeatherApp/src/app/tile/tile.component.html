@@ -1,10 +1,15 @@
-<div *ngFor="let city of cities">
-  <a class="tile" routerLink="/forecast/{{city.city}}">
-    <div>
-      <p class="city">{{city.city}}</p>
-      <p class="location">{{city.location}}</p>
-    </div>
-    <p class="temp">{{city.weather[0].temp}}°C</p>
-    <img src="../../assets/{{city.weather[0].icon}}.png" alt="{{city.weather[0].icon}}">
-  </a>
+<span>Add a city:</span>
+<input type="text" name="city" [(ngModel)]="searched" placeholder="Type a city name" (keydown.enter)="addCity()">
+<div class="main" *ngIf="cities">
+  <div class="full-tile" *ngFor="let city of cities">
+    <a class="tile" routerLink="/forecast/{{city.city}}">
+      <div>
+        <p class="city">{{city.city}}</p>
+        <p class="location">{{city.location}}</p>
+      </div>
+      <p class="temp">{{city.weather[0].temp}}°C</p>
+      <img src="../../assets/{{city.weather[0].icon}}.png" alt="{{city.weather[0].icon}}">
+    </a>
+    <button type="submit" (click)="deleteCity(city.city.toUpperCase())">Delete {{city.city}}</button>
+  </div>
 </div>

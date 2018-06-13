@@ -1,38 +1,39 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
-import { TileComponent } from '../tile/tile.component';
-import { City } from '../city';
 import { CityService } from '../city.service';
+
+import { City } from '../city';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.css']
 })
-
 export class ForecastComponent implements OnInit {
-
-  @Input() city: City;
+  city: any;
 
   constructor(
     private route: ActivatedRoute,
-    private cityService: CityService,
-    private location: Location
-  ) { }
+    private cityService: CityService
+  ) {}
 
   ngOnInit() {
-    this.getCity();
+    this.getCityForecast();
   }
 
-  getCity(): void {
-    const city = this.route.snapshot.paramMap.get('city');
-    this.cityService.getCity(city)
-      .subscribe(city => this.city = city);
-  }
-
-  goBack(): void {
-    this.location.back();
+  getCityForecast(): void {
+    const name = this.route.snapshot.paramMap.get('city');
+    this.cityService.getCity(name).subscribe((data: any) => {
+      this.city = new City(data.city.name, data.city.country);
+      for (let i = 0; i < 5; i++) {
+        const currentData = data.list[i * 8];
+        this.city.createWeather(
+          Math.round(currentData.main.temp - 273.15),
+          currentData.weather[0].main,
+          currentData.weather[0].description
+        );
+      }
+    });
   }
 }

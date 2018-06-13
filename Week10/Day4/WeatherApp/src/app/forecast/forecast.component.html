@@ -1,8 +1,13 @@
-<h2>{{city.city}}</h2>
-<div class="tile" *ngFor="let detail of city.weather">
-  <img src="../../assets/{{detail.icon}}.png" alt="{{detail.icon}}">
-  <div>
+<div class="title">
+  <h1>5-day weather forecast for {{city.city}}</h1>
+</div>
+<div class="tiles" *ngIf="city">
+  <div class="tile" *ngFor="let detail of city.weather">
+    <img src="../../assets/{{detail.icon}}.png" alt="{{detail.icon}}">
     <p class="temp">{{detail.temp}}°C</p>
     <p class="detail">{{detail.message}}</p>
   </div>
 </div>
+<a routerLink="/dashboard">
+  <button>Go back</button>
+</a>

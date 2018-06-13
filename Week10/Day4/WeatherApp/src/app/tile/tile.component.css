@@ -11,6 +11,17 @@
   color: black;
 }
 
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.full-tile {
+  margin-bottom: 50px;
+}
+
 .city {
   font-weight: 900;
   font-size: 35px;
