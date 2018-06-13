@@ -4,6 +4,7 @@ import { TileComponent } from './tile/tile.component';
 import { ForecastComponent } from './forecast/forecast.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: TileComponent },
   { path: 'forecast/:city', component: ForecastComponent },
 ];
